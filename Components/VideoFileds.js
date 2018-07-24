@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Feather'
 import { Video } from 'expo';
 
 export default class Videos extends React.Component {
-  state = { fileds: [],video:{public_id:"rcqzlp00yewcgi71uace", format: "mp4"}, isLoaded: false};
+  state = { fileds: [],video:{}, isLoaded: false};
 
   getFileds() {
     this.setState({ fileds: [{filed: "שדה 1", grade: 100},{filed: "שדה 2", grade: 92},{filed: "שדה 3", grade: 40},{filed: "שדה 4", grade: 85},{filed: "שדה 5", grade: 22}], isLoaded: true});
@@ -14,10 +14,13 @@ export default class Videos extends React.Component {
 
   uploadVideo() {
     alert("succes!")
+    this.props.navigation.navigate('Home');
   }
 
    componentDidMount() {
-       this.getFileds()
+    const { navigation } = this.props;
+    this.setState({video: navigation.getParam('video', 'NO-ID')})
+    this.getFileds()
   }
   render() {
     let {fileds} = this.state
@@ -37,7 +40,7 @@ export default class Videos extends React.Component {
 	        style={styles.clipStyle}
           />
           <View style={styles.btn}>
-          <Icon.Button name="upload" onPress={this.uploadVideo}/>
+          <Icon.Button name="upload" onPress={() => this.uploadVideo()}/>
           </View>
         </View>
       );
@@ -50,19 +53,19 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: "50%"
   },
   header: {
     fontSize: 20,
   },
   fileds: {
-    top: "20%"
+    top: "5%"
   },
   btn: {
-    top: "100%"
+    position:"absolute",
+    bottom:0
   },
   clipStyle: {
-    top: "50%",
+    top: "5%",
     width: 150,
     height: 150
   }

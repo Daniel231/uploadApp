@@ -3,7 +3,9 @@ import { Button } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import axios from 'axios'; // 0.18.0
 import { Icon } from 'react-native-elements'
+import Upload from 'react-native-vector-icons/Feather'
 import { Video , ImagePicker} from 'expo';
+import { createStackNavigator } from 'react-navigation';
 
 const VideosLayout = (props) => {
   const removeVideo = (index) => {
@@ -18,15 +20,9 @@ const VideosLayout = (props) => {
               useNativeControls= {true} 
               style={styles.clipStyle}/>
               <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/>
+              <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}} name="update" onPress={() => props.navigation('Details', {video: item})}/>
             </View>
           )}
-        </View>
-        <View>
-          <Button
-          title="תוצאות"
-          onPress={() => {alert("Results!")} }
-          color="#841584"
-          />
         </View>
       </View>
     )
@@ -97,8 +93,15 @@ export default class Videos extends React.Component {
     return (
       <View style={styles.main}>
         {this.state.isLoading ?
-            <VideosLayout videos={videos} removeVideo={(item) => this.removeVideo()}/> : <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} removeVideo={(item) => this.removeVideo()}/>
+            <VideosLayout videos={videos} navigation={(item, bla) => this.props.navigation.navigate(item, bla)} removeVideo={(item) => this.removeVideo()}/> : <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} removeVideo={(item) => this.removeVideo()}/>
         }
+        <View style={{position:"absolute", bottom:0, width:"100%"}}>
+          <Button
+          title="תוצאות"
+          onPress={() => {this.props.navigation.navigate("Results")} }
+          color="#841584"
+          />
+        </View>
       </View>
     );
   }
