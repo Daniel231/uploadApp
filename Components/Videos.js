@@ -49,7 +49,7 @@ const AddingVideos = (props) => {
       </View>)
       }
     </View>
-    <Button title="הוסף סרטון מהמכשיר" onPress={() => pickVideo()} style={styles.btn}/>
+    {/* <Button title="הוסף סרטון מהמכשיר" onPress={() => pickVideo()} style={styles.btn}/> */}
   </View>
   )
 }
@@ -95,6 +95,7 @@ export default class Videos extends React.Component {
         {this.state.isLoading ?
             <VideosLayout videos={videos} navigation={(item, bla) => this.props.navigation.navigate(item, bla)} removeVideo={(item) => this.removeVideo()}/> : <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} removeVideo={(item) => this.removeVideo()}/>
         }
+        {this.state.videos.length > 3 ? <View/> :  <Button title="הוסף סרטון מהמכשיר" onPress={this.pickVideo} style={styles.btn}/>}
         <View style={{position:"absolute", bottom:0, width:"100%"}}>
           <Button
           title="תוצאות"

@@ -4,6 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import axios from 'axios'; // 0.18.0
 import Icon from 'react-native-vector-icons/Feather'
 import { Video } from 'expo';
+import CryptoJS from 'crypto-js';
+import {url, api_key, api_secret} from '../cloudinaryDetails.js'
 
 export default class Videos extends React.Component {
   state = { fileds: [],video:{}, isLoaded: false};
@@ -13,8 +15,38 @@ export default class Videos extends React.Component {
   }
 
   uploadVideo() {
-    alert("succes!")
-    this.props.navigation.navigate('Home');
+    console.log("start")
+    let timestamp = (Date.now() / 1000 | 0).toString();
+    let hash_string = 'timestamp=' + timestamp + api_secret
+    let signature = CryptoJS.SHA1(hash_string).toString()
+
+    var fd = new FormData();
+    fd.append('timestamp', timestamp);
+    fd.append('api_key', api_key);
+    fd.append('signature', signature);
+    // fd.append("tags", "browser_upload"); // Optional - add tag for image admin in Cloudinary
+    fd.append("file", {uri: "http://res.cloudinary.com/unicodeveloper/video/upload/" +  this.state.video.public_id + "." + this.state.video.format, type: 'video/mp4', name: `video_1.mp4`});
+    const config = {
+      headers: { "X-Requested-With": "XMLHttpRequest" },
+      onUploadProgress: function(progressEvent) {
+        // Do whatever you want with the native progress event
+        // console.log('progressEvent', progressEvent);
+        var progress = Math.round((progressEvent.loaded * 100.0) / progressEvent.total);
+        
+
+        console.log(`onUploadProgress progressEvent.loaded: ${progressEvent.loaded},
+      progressEvent.total: ${progressEvent.total}`);
+      }
+    };
+    axios.post(url, fd, config, this)
+      .then(function (res) {
+        console.log('res', res)
+        alert("succes!")
+      })
+      .catch(function (err) {
+        console.error('err', JSON.stringify(err));
+      });
+      // this.props.navigation.navigate('Home');
   }
 
    componentDidMount() {
