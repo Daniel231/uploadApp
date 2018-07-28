@@ -89,9 +89,14 @@ export default class Videos extends React.Component {
     return (
       <View style={styles.main}>
         {this.state.isLoading ?
-            <VideosLayout videos={videos} navigation={(item, bla) => this.props.navigation.navigate(item, bla)} removeVideo={(item) => this.removeVideo()}/> : <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} removeVideo={(item) => this.removeVideo()}/>
+            <VideosLayout videos={videos} 
+              navigation={(item, bla) => this.props.navigation.navigate(item, bla)} 
+              removeVideo={(item) => this.removeVideo()}/> : 
+              <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} 
+              removeVideo={(item) => this.removeVideo()}/>
         }
-        {this.state.videos.length < 4 && <Upload name="plus" onPress={this.pickVideo} style={styles.btn}/>}
+        {this.state.videos.length < 4 && 
+          <Button title="הוסף סרטון מהמכשיר" onPress={this.pickVideo} style={styles.btn}/>}
         {this.state.results && <View style={{position:"absolute", bottom:0, width:"100%"}}>
           <Button
           title="תוצאות"
@@ -106,7 +111,7 @@ export default class Videos extends React.Component {
 
 const styles = StyleSheet.create({
   main: {
-    flex: 1,
+    display:'flex',
     flexDirection: "column",
     justifyContent: 'center',
     height: "100%"
