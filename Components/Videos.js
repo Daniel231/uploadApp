@@ -1,11 +1,10 @@
 import React from 'react';
 import { Button } from 'react-native';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import axios from 'axios'; // 0.18.0
 import { Icon } from 'react-native-elements'
 import Upload from 'react-native-vector-icons/Feather'
 import { Video , ImagePicker} from 'expo';
-import { createStackNavigator } from 'react-navigation';
 
 const VideosLayout = (props) => {
   const removeVideo = (index) => {
@@ -20,7 +19,9 @@ const VideosLayout = (props) => {
               useNativeControls= {true} 
               style={styles.clipStyle}/>
               <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/>
-              <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}} name="update" onPress={() => props.navigation('Details', {video: item})}/>
+              {item.public_id ? <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}} name="send"/> : 
+                <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}}
+                  name="update" onPress={() => props.navigation('Details', {video: item})}/>}
             </View>
           )}
         </View>
@@ -34,10 +35,6 @@ const AddingVideos = (props) => {
     props.removeVideo(index)
   }
 
-  const pickVideo = () => {
-    props.pickVideo();
-  }
-
   return(
   <View>
     <View style={styles.container}>
@@ -49,13 +46,12 @@ const AddingVideos = (props) => {
       </View>)
       }
     </View>
-    {/* <Button title="הוסף סרטון מהמכשיר" onPress={() => pickVideo()} style={styles.btn}/> */}
   </View>
   )
 }
 
 export default class Videos extends React.Component {
-  state = { videos: [] , isLoaded: false};
+  state = { videos: [] , isLoaded: false, results: false};
 
   pickVideo = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -72,7 +68,7 @@ export default class Videos extends React.Component {
   getVideos() {
     axios.get('http://res.cloudinary.com/unicodeveloper/video/list/miniflix.json')
           .then(res => {
-              let a = res.data.resources.splice(0,4)
+              let a = res.data.resources.splice(0,2)
               this.setState({ videos: a, isLoading: true});
     });
   }
@@ -95,14 +91,14 @@ export default class Videos extends React.Component {
         {this.state.isLoading ?
             <VideosLayout videos={videos} navigation={(item, bla) => this.props.navigation.navigate(item, bla)} removeVideo={(item) => this.removeVideo()}/> : <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} removeVideo={(item) => this.removeVideo()}/>
         }
-        {this.state.videos.length > 3 ? <View/> :  <Button title="הוסף סרטון מהמכשיר" onPress={this.pickVideo} style={styles.btn}/>}
-        <View style={{position:"absolute", bottom:0, width:"100%"}}>
+        {this.state.videos.length < 4 && <Upload name="plus" onPress={this.pickVideo} style={styles.btn}/>}
+        {this.state.results && <View style={{position:"absolute", bottom:0, width:"100%"}}>
           <Button
           title="תוצאות"
           onPress={() => {this.props.navigation.navigate("Results")} }
           color="#841584"
           />
-        </View>
+        </View>}
       </View>
     );
   }
@@ -110,7 +106,7 @@ export default class Videos extends React.Component {
 
 const styles = StyleSheet.create({
   main: {
-    display:'flex',
+    flex: 1,
     flexDirection: "column",
     justifyContent: 'center',
     height: "100%"
@@ -123,7 +119,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   btn: {
-    
+    flexDirection: "row",
+    width: 150,
+    height: 150,
+    backgroundColor: "black"
   },
   clipStyle: {
     width: 150,
