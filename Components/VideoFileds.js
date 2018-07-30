@@ -24,7 +24,7 @@ export default class Videos extends React.Component {
     fd.append('timestamp', timestamp);
     fd.append('api_key', api_key);
     fd.append('signature', signature);
-    // fd.append("tags", "browser_upload"); // Optional - add tag for image admin in Cloudinary
+    // fd.append("tags", "bla"); // Optional - add tag for image admin in Cloudinary
     fd.append("file", {uri: "http://res.cloudinary.com/unicodeveloper/video/upload/" +  this.state.video.public_id + "." + this.state.video.format, type: 'video/mp4', name: `video_1.mp4`});
     const config = {
       headers: { "X-Requested-With": "XMLHttpRequest" },

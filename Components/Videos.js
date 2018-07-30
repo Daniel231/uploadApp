@@ -6,6 +6,8 @@ import { Icon } from 'react-native-elements'
 import Upload from 'react-native-vector-icons/Feather'
 import { Video , ImagePicker} from 'expo';
 import { createStackNavigator } from 'react-navigation';
+import {cloud_name, api_key, api_secret} from '../cloudinaryDetails.js'
+import base64 from 'react-native-base64'
 
 const VideosLayout = (props) => {
   const removeVideo = (index) => {
@@ -16,7 +18,7 @@ const VideosLayout = (props) => {
         <View style={styles.container}> 
           {props.videos.map((item,i) =>
             <View key={i}>
-              <Video source={{ uri: "http://res.cloudinary.com/unicodeveloper/video/upload/" +  item.public_id + "." + item.format }} 
+              <Video source={{ uri: item.url }} 
               useNativeControls= {true} 
               style={styles.clipStyle}/>
               <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/>
@@ -70,11 +72,19 @@ export default class Videos extends React.Component {
   };
 
   getVideos() {
-    axios.get('http://res.cloudinary.com/unicodeveloper/video/list/miniflix.json')
+    const tok = api_key+":"+api_secret;
+    const hash = base64.encode(tok);
+    const Basic = 'Basic ' + hash;
+
+    axios.get('https://api.cloudinary.com/v1_1/dtvoiy5lg/resources/video', {headers : { 'Authorization' : Basic }})
           .then(res => {
+            console.log(res)
               let a = res.data.resources.splice(0,4)
               this.setState({ videos: a, isLoading: true});
-    });
+          })
+          .catch(err =>{
+            console.log(err.response)
+          });
   }
 
   removeVideo(index) {
