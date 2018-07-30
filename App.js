@@ -5,7 +5,6 @@ import Intro from './Components/intro';
 import Splash from './Components/splash';
 import VideoFileds from './Components/VideoFileds';
 import Results from './Components/results';
-require('react-devtools');
 import { createStackNavigator } from 'react-navigation';
 
 const RootStack = createStackNavigator({
