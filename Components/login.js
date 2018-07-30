@@ -25,6 +25,7 @@ export default class Login extends React.Component {
               avatar: user.picture,
               name: user.nickname
             });
+            this.props.navigation.navigate("Intro")
           })
           .catch(error => console.error(error))
       })

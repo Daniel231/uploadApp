@@ -4,7 +4,7 @@ import { StyleSheet, Text, View} from 'react-native';
 import axios from 'axios'; // 0.18.0
 import { Icon } from 'react-native-elements'
 import Upload from 'react-native-vector-icons/Feather'
-import { Video , ImagePicker} from 'expo';
+// import { Video , ImagePicker} from 'expo';
 
 const VideosLayout = (props) => {
   const removeVideo = (index) => {
@@ -15,9 +15,9 @@ const VideosLayout = (props) => {
         <View style={styles.container}> 
           {props.videos.map((item,i) =>
             <View key={i}>
-              <Video source={{ uri: "http://res.cloudinary.com/unicodeveloper/video/upload/" +  item.public_id + "." + item.format }} 
+              {/* <Video source={{ uri: "http://res.cloudinary.com/unicodeveloper/video/upload/" +  item.public_id + "." + item.format }} 
               useNativeControls= {true} 
-              style={styles.clipStyle}/>
+              style={styles.clipStyle}/> */}
               <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/>
               {item.public_id ? <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}} name="send"/> : 
                 <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}}
@@ -54,9 +54,9 @@ export default class Videos extends React.Component {
   state = { videos: [] , isLoaded: false, results: false};
 
   pickVideo = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes:"Videos",
-    });
+    // let result = await ImagePicker.launchImageLibraryAsync({
+    //   mediaTypes:"Videos",
+    // });
 
     if (!result.cancelled) {
       this.setState(prevState => ({

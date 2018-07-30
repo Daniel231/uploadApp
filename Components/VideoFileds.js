@@ -3,8 +3,8 @@ import { Button } from 'react-native';
 import ProgressCircle from 'react-native-progress-circle'
 import { StyleSheet, Text, View , Modal} from 'react-native';
 import axios from 'axios'; // 0.18.0
-import Icon from 'react-native-vector-icons/Feather'
-import { Video } from 'expo';
+// import Icon from 'react-native-vector-icons/Feather'
+// import { Video } from 'expo';
 import CryptoJS from 'crypto-js';
 import {url, api_key, api_secret} from '../cloudinaryDetails.js'
 import PopupDialog from 'react-native-popup-dialog';
