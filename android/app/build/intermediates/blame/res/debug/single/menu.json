@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/menu/stub.xml",
+        "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/yea/react-native-navigation/unspecified/res/menu/stub.xml"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/menu/search_item.xml",
+        "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/yea/react-native-navigation/unspecified/res/menu/search_item.xml"
+    }
+]

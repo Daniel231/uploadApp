@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from 'react-native';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import axios from 'axios'; // 0.18.0
 import { Icon } from 'react-native-elements'
 import Upload from 'react-native-vector-icons/Feather'
-import { Video , ImagePicker} from 'expo';
+// import { Video , ImagePicker} from 'expo';
 import { createStackNavigator } from 'react-navigation';
 import {cloud_name, api_key, api_secret} from '../cloudinaryDetails.js'
 import base64 from 'react-native-base64'
@@ -20,9 +20,11 @@ const VideosLayout = (props) => {
             <View key={i}>
               <Video source={{ uri: item.url }} 
               useNativeControls= {true} 
-              style={styles.clipStyle}/>
+              style={styles.clipStyle}/> */}
               <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/>
-              <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}} name="update" onPress={() => props.navigation('Details', {video: item})}/>
+              {item.public_id ? <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}} name="send"/> : 
+                <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}}
+                  name="update" onPress={() => props.navigation('Details', {video: item})}/>}
             </View>
           )}
         </View>
@@ -36,10 +38,6 @@ const AddingVideos = (props) => {
     props.removeVideo(index)
   }
 
-  const pickVideo = () => {
-    props.pickVideo();
-  }
-
   return(
   <View>
     <View style={styles.container}>
@@ -51,18 +49,17 @@ const AddingVideos = (props) => {
       </View>)
       }
     </View>
-    {/* <Button title="הוסף סרטון מהמכשיר" onPress={() => pickVideo()} style={styles.btn}/> */}
   </View>
   )
 }
 
 export default class Videos extends React.Component {
-  state = { videos: [] , isLoaded: false};
+  state = { videos: [] , isLoaded: false, results: false};
 
   pickVideo = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes:"Videos",
-    });
+    // let result = await ImagePicker.launchImageLibraryAsync({
+    //   mediaTypes:"Videos",
+    // });
 
     if (!result.cancelled) {
       this.setState(prevState => ({
@@ -78,8 +75,7 @@ export default class Videos extends React.Component {
 
     axios.get('https://api.cloudinary.com/v1_1/dtvoiy5lg/resources/video', {headers : { 'Authorization' : Basic }})
           .then(res => {
-            console.log(res)
-              let a = res.data.resources.splice(0,4)
+              let a = res.data.resources.splice(0,2)
               this.setState({ videos: a, isLoading: true});
           })
           .catch(err =>{
@@ -103,16 +99,21 @@ export default class Videos extends React.Component {
     return (
       <View style={styles.main}>
         {this.state.isLoading ?
-            <VideosLayout videos={videos} navigation={(item, bla) => this.props.navigation.navigate(item, bla)} removeVideo={(item) => this.removeVideo()}/> : <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} removeVideo={(item) => this.removeVideo()}/>
+            <VideosLayout videos={videos} 
+              navigation={(item, bla) => this.props.navigation.navigate(item, bla)} 
+              removeVideo={(item) => this.removeVideo()}/> : 
+              <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} 
+              removeVideo={(item) => this.removeVideo()}/>
         }
-        {this.state.videos.length > 3 ? <View/> :  <Button title="הוסף סרטון מהמכשיר" onPress={this.pickVideo} style={styles.btn}/>}
-        <View style={{position:"absolute", bottom:0, width:"100%"}}>
+        {this.state.videos.length < 4 && 
+          <Button title="הוסף סרטון מהמכשיר" onPress={this.pickVideo} style={styles.btn}/>}
+        {this.state.results && <View style={{position:"absolute", bottom:0, width:"100%"}}>
           <Button
           title="תוצאות"
           onPress={() => {this.props.navigation.navigate("Results")} }
           color="#841584"
           />
-        </View>
+        </View>}
       </View>
     );
   }
@@ -133,7 +134,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   btn: {
-    
+    flexDirection: "row",
+    width: 150,
+    height: 150,
+    backgroundColor: "black"
   },
   clipStyle: {
     width: 150,
