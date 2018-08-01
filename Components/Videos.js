@@ -2,10 +2,11 @@ import React from 'react';
 import { Button } from 'react-native';
 import { StyleSheet, Text, View} from 'react-native';
 import axios from 'axios'; // 0.18.0
-import { Icon } from 'react-native-elements'
-import Upload from 'react-native-vector-icons/Feather'
+// import { Icon } from 'react-native-elements'
+// import Upload from 'react-native-vector-icons/Feather'
 // import { Video , ImagePicker} from 'expo';
 import { createStackNavigator } from 'react-navigation';
+import Video from 'react-native-video';
 import {cloud_name, api_key, api_secret} from '../cloudinaryDetails.js'
 import base64 from 'react-native-base64'
 
@@ -19,12 +20,11 @@ const VideosLayout = (props) => {
           {props.videos.map((item,i) =>
             <View key={i}>
               <Video source={{ uri: item.url }} 
-              useNativeControls= {true} 
-              style={styles.clipStyle}/> */}
-              <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/>
+              style={styles.clipStyle}/>
+              {/* <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/>
               {item.public_id ? <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}} name="send"/> : 
                 <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}}
-                  name="update" onPress={() => props.navigation('Details', {video: item})}/>}
+                  name="update" onPress={() => props.navigation('Details', {video: item})}/>} */}
             </View>
           )}
         </View>
@@ -44,8 +44,8 @@ const AddingVideos = (props) => {
       { props.videos &&
         props.videos.map((item,i) =>
         <View key={i}>
-        <Video source={{ uri: item }} useNativeControls= {true} style={styles.clipStyle}/>
-        <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/>
+        <Video source={{ uri: item }} style={styles.clipStyle}/>
+        {/* <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/> */}
       </View>)
       }
     </View>
