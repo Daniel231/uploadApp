@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/drawable-mdpi/node_modules_reactnavigation_src_views_assets_backiconmask.png",
+        "source": "/home/daniel/yea/android/app/src/main/res/drawable-mdpi/node_modules_reactnavigation_src_views_assets_backiconmask.png"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/drawable-mdpi/assets_images_3.png",
+        "source": "/home/daniel/yea/android/app/src/main/res/drawable-mdpi/assets_images_3.png"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_star.png",
+        "source": "/home/daniel/yea/android/app/src/main/res/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_star.png"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/drawable-mdpi/assets_images_c1.png",
+        "source": "/home/daniel/yea/android/app/src/main/res/drawable-mdpi/assets_images_c1.png"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/drawable-mdpi/assets_images_splash.png",
+        "source": "/home/daniel/yea/android/app/src/main/res/drawable-mdpi/assets_images_splash.png"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/drawable-mdpi/assets_images_2.png",
+        "source": "/home/daniel/yea/android/app/src/main/res/drawable-mdpi/assets_images_2.png"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_rocket.png",
+        "source": "/home/daniel/yea/android/app/src/main/res/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_rocket.png"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/drawable-mdpi/node_modules_reactnavigation_src_views_assets_backicon.png",
+        "source": "/home/daniel/yea/android/app/src/main/res/drawable-mdpi/node_modules_reactnavigation_src_views_assets_backicon.png"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_heart.png",
+        "source": "/home/daniel/yea/android/app/src/main/res/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_heart.png"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_bell.png",
+        "source": "/home/daniel/yea/android/app/src/main/res/drawable-mdpi/node_modules_reactnativeelements_src_rating_images_bell.png"
+    }
+]
