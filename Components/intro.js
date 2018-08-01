@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, AsyncStorage } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider-rtl';
  
 const styles = StyleSheet.create({
@@ -48,6 +48,12 @@ const slides = [
 ];
  
 export default class Intro extends React.Component {
+  componentWillMount() {
+    
+    AsyncStorage.getItem('userData', (err, result) => {
+      console.log("intro will mount", result)
+    });
+  }    
   _onDone = () => {
     this.props.navigation.navigate("Home")
   }
