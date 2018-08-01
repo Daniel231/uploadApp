@@ -3,11 +3,13 @@ package com.yea;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.BV.LinearGradient.LinearGradientPackage;
+import com.github.yamill.orientation.OrientationPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
+import com.corbt.keepawake.KCKeepAwakePackage;
+import com.brentvatne.react.ReactVideoPackage;
 import com.reactnativenavigation.NavigationApplication;
 import com.imagepicker.ImagePickerPackage;
-import com.BV.LinearGradient.LinearGradientPackage;
-import com.react.rnspinkit.RNSpinkitPackage;
 import com.auth0.react.A0Auth0Package;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -29,11 +31,12 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new VectorIconsPackage(),
-            // new NavigationApplication(),
-            new ImagePickerPackage(),
             new LinearGradientPackage(),
-            new RNSpinkitPackage(),
+            new OrientationPackage(),
+            new VectorIconsPackage(),
+            new KCKeepAwakePackage(),
+            new ReactVideoPackage(),
+            new ImagePickerPackage(),
             new A0Auth0Package()
       );
     }

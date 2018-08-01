@@ -6,7 +6,6 @@ import Splash from './Components/splash';
 import VideoFileds from './Components/VideoFileds';
 import Login from './Components/login';
 import Results from './Components/results';
-require('react-devtools');
 import { createStackNavigator } from 'react-navigation';
 
 const RootStack = createStackNavigator({
@@ -36,7 +35,7 @@ const RootStack = createStackNavigator({
     }
   },
   {
-    initialRouteName: 'Login',
+    initialRouteName: 'Home',
   },
 );
 

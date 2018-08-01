@@ -1,13 +1,11 @@
 import React from 'react';
 import { Button } from 'react-native';
-import ProgressCircle from 'react-native-progress-circle'
 import { StyleSheet, Text, View , Modal} from 'react-native';
 import axios from 'axios'; // 0.18.0
-// import Icon from 'react-native-vector-icons/Feather'
-// import { Video } from 'expo';
+import Icon from 'react-native-vector-icons/Feather'
+import Video from 'react-native-video';
 import CryptoJS from 'crypto-js';
 import {url, api_key, api_secret} from '../cloudinaryDetails.js'
-import PopupDialog from 'react-native-popup-dialog';
 
 export default class Videos extends React.Component {
   state = { fileds: [],video:{}, isLoaded: false};
@@ -34,7 +32,6 @@ export default class Videos extends React.Component {
         // Do whatever you want with the native progress event
         // console.log('progressEvent', progressEvent);
         var progress = Math.round((progressEvent.loaded * 100.0) / progressEvent.total);
-        this.popupDialog.show();
         console.log(`onUploadProgress progressEvent.loaded: ${progressEvent.loaded},
       progressEvent.total: ${progressEvent.total}`);
       }
@@ -68,12 +65,12 @@ export default class Videos extends React.Component {
           <Text key ={i}>{item.filed} : {item.grade}</Text>)}
           </View>}
           <Video
-          source={{ uri: "http://res.cloudinary.com/unicodeveloper/video/upload/" +  this.state.video.public_id + "." + this.state.video.format}}
+          source={this.state.video.uri}
           useNativeControls= {true}
 	        style={styles.clipStyle}
           />
           <View style={styles.btn}>
-          <Icon.Button name="upload" onPress={() => this.uploadVideo()}/>
+          <Icon name="upload" onPress={() => this.uploadVideo()} size={50}/>
           </View>
         </View>
       );

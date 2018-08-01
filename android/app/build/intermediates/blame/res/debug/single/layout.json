@@ -1,23 +1,23 @@
 [
     {
-        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
-        "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_activity_chooser_view.xml"
-    },
-    {
         "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
         "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_activity_chooser_view.xml"
     },
     {
         "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
         "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/design/25.3.1/res/layout/design_navigation_item.xml"
     },
     {
-        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
-        "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/select_dialog_item_material.xml"
-    },
-    {
         "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
         "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
+        "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/select_dialog_item_material.xml"
     },
     {
         "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
@@ -44,12 +44,12 @@
         "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
-        "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
-    },
-    {
         "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
         "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/notification_template_media_custom.xml"
+    },
+    {
+        "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
         "merged": "/home/daniel/yea/android/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",

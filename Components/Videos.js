@@ -2,10 +2,10 @@ import React from 'react';
 import { Button } from 'react-native';
 import { StyleSheet, Text, View} from 'react-native';
 import axios from 'axios'; // 0.18.0
-import { Icon } from 'react-native-elements'
-import Upload from 'react-native-vector-icons/Feather'
-// import { Video , ImagePicker} from 'expo';
-import { createStackNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Feather'
+import Video from 'react-native-video';
+// import Video from 'react-native-af-video-player'
+import ImagePicker from 'react-native-image-picker'
 import {cloud_name, api_key, api_secret} from '../cloudinaryDetails.js'
 import base64 from 'react-native-base64'
 
@@ -18,13 +18,12 @@ const VideosLayout = (props) => {
         <View style={styles.container}> 
           {props.videos.map((item,i) =>
             <View key={i}>
-              <Video source={{ uri: item.url }} 
-              useNativeControls= {true} 
-              style={styles.clipStyle}/> */}
-              <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/>
-              {item.public_id ? <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}} name="send"/> : 
-                <Icon containerStyle={{position:"absolute", right:0, bottom:0,backgroundColor:"white"}}
-                  name="update" onPress={() => props.navigation('Details', {video: item})}/>}
+              <Video source={{uri:item.uri}}
+              style={styles.clipStyle}/> 
+              <Icon name="x-circle" style={{position:"absolute", left: 5, top: 5}} onPress={() => removeVideo(i)} size={20}/>
+              {item.public_id ? <Icon style={{position:"absolute", right:5, bottom:5}} name="send" size={20}/> : 
+                <Icon name="upload" style={{position:"absolute", right:5, bottom:5 }} size={20}
+                   onPress={() => props.navigation('Details', {video: item})} />}
             </View>
           )}
         </View>
@@ -44,8 +43,8 @@ const AddingVideos = (props) => {
       { props.videos &&
         props.videos.map((item,i) =>
         <View key={i}>
-        <Video source={{ uri: item }} useNativeControls= {true} style={styles.clipStyle}/>
-        <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/>
+        <Video source={{ uri: item }} style={styles.clipStyle}/>
+        {/* <Icon containerStyle={{position:"absolute", backgroundColor:"white"}} name="close" onPress={() => removeVideo(i)}/> */}
       </View>)
       }
     </View>
@@ -56,17 +55,34 @@ const AddingVideos = (props) => {
 export default class Videos extends React.Component {
   state = { videos: [] , isLoaded: false, results: false};
 
-  pickVideo = async () => {
-    // let result = await ImagePicker.launchImageLibraryAsync({
-    //   mediaTypes:"Videos",
-    // });
-
-    if (!result.cancelled) {
-      this.setState(prevState => ({
-        videos: [...prevState.videos,result.uri]
-         }));
-    }
-  };
+  selectVideoTapped() {
+    const options = {
+      title: 'בחירת וידיאו',
+      takePhotoButtonTitle: 'צלם מהמצלמה',
+      chooseFromLibraryButtonTitle:'בחר מגלריה',
+      cancelButtonTitle:'ביטול',
+      mediaType: 'video',
+      videoQuality: 'medium'
+    };
+    ImagePicker.showImagePicker(options, (response) => {
+      console.log('Response = ', response);
+  
+      if (response.didCancel) {
+        console.log('User cancelled video picker');
+      }
+      else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      }
+      else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+      }
+      else {
+        this.setState(prevState => ({
+          videos: [...prevState.videos,response.uri]
+        }));
+      }
+    });
+  }
 
   getVideos() {
     const tok = api_key+":"+api_secret;
@@ -106,7 +122,7 @@ export default class Videos extends React.Component {
               removeVideo={(item) => this.removeVideo()}/>
         }
         {this.state.videos.length < 4 && 
-          <Button title="הוסף סרטון מהמכשיר" onPress={this.pickVideo} style={styles.btn}/>}
+          <Button title="הוסף סרטון מהמכשיר" onPress={() => this.selectVideoTapped()} style={styles.btn}/>}
         {this.state.results && <View style={{position:"absolute", bottom:0, width:"100%"}}>
           <Button
           title="תוצאות"
