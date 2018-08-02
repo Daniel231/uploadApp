@@ -18,7 +18,7 @@ const VideosLayout = (props) => {
         <View style={styles.container}> 
           {props.videos.map((item,i) =>
             <View key={i}>
-              <Video source={{uri:item.uri}}
+              <Video source={{uri:item.url}}
               style={styles.clipStyle}/> 
               <Icon name="x-circle" style={{position:"absolute", left: 5, top: 5}} onPress={() => removeVideo(i)} size={20}/>
               {item.public_id ? <Icon style={{position:"absolute", right:5, bottom:5}} name="send" size={20}/> : 

@@ -3,15 +3,20 @@ import { Button } from 'react-native';
 import { StyleSheet, Text, View , Modal} from 'react-native';
 import axios from 'axios'; // 0.18.0
 import Icon from 'react-native-vector-icons/Feather'
-import Video from 'react-native-video';
 import CryptoJS from 'crypto-js';
 import {url, api_key, api_secret} from '../cloudinaryDetails.js'
+import PercentageCircle from 'react-native-percentage-circle';
+
 
 export default class Videos extends React.Component {
-  state = { fileds: [],video:{}, isLoaded: false};
+  state = { fileds: [],video:{},modalVisible: false, isLoaded: false, a:0};
 
   getFileds() {
     this.setState({ fileds: [{filed: "שדה 1", grade: 100},{filed: "שדה 2", grade: 92},{filed: "שדה 3", grade: 40},{filed: "שדה 4", grade: 85},{filed: "שדה 5", grade: 22}], isLoaded: true});
+  }
+
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
   }
 
   uploadVideo() {
@@ -32,6 +37,8 @@ export default class Videos extends React.Component {
         // Do whatever you want with the native progress event
         // console.log('progressEvent', progressEvent);
         var progress = Math.round((progressEvent.loaded * 100.0) / progressEvent.total);
+        this.setState({modalVisible: true})
+        this.setState({a: progress})
         console.log(`onUploadProgress progressEvent.loaded: ${progressEvent.loaded},
       progressEvent.total: ${progressEvent.total}`);
       }
@@ -64,11 +71,28 @@ export default class Videos extends React.Component {
             {fileds.map((item,i) =>
           <Text key ={i}>{item.filed} : {item.grade}</Text>)}
           </View>}
-          <Video
+          {/* <Video
           source={this.state.video.uri}
           useNativeControls= {true}
 	        style={styles.clipStyle}
-          />
+          /> */}
+            <Modal
+            animationType="slide"
+            transparent={true}
+            visible={true}
+            onRequestClose={() => {
+              alert('Modal has been closed.');
+            }}
+            >
+            <View style={{flex: 1,
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center', backgroundColor: '#00000080'}}>
+              <View>
+                <PercentageCircle radius={35} percent={this.state.a} color={"#3498db"}></PercentageCircle>  
+              </View>
+            </View>
+          </Modal>
           <View style={styles.btn}>
           <Icon name="upload" onPress={() => this.uploadVideo()} size={50}/>
           </View>
