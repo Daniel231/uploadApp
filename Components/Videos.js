@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-native';
-import { StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View, AsyncStorage} from 'react-native';
 import axios from 'axios'; // 0.18.0
 import Icon from 'react-native-vector-icons/Feather'
 import Video from 'react-native-video';
@@ -18,7 +18,7 @@ const VideosLayout = (props) => {
         <View style={styles.container}> 
           {props.videos.map((item,i) =>
             <View key={i}>
-              <Video source={{uri:item.uri}}
+              <Video source={{uri:item.url}}
               style={styles.clipStyle}/> 
               <Icon name="x-circle" style={{position:"absolute", left: 5, top: 5}} onPress={() => removeVideo(i)} size={20}/>
               {item.public_id ? <Icon style={{position:"absolute", right:5, bottom:5}} name="send" size={20}/> : 
@@ -53,7 +53,18 @@ const AddingVideos = (props) => {
 }
 
 export default class Videos extends React.Component {
-  state = { videos: [] , isLoaded: false, results: false};
+  state = { videos: [] , isLoaded: false, results: false, userData:"a"};
+
+  componentDidMount() {
+    AsyncStorage.getItem('userData', (err, userData) => {
+      if(userData){
+        this.setState({userData: JSON.parse(userData).name})
+        console.log('initial Data',this.state.userData);
+        this.getVideos();
+      }
+    });
+  }
+
 
   selectVideoTapped() {
     const options = {
@@ -88,10 +99,12 @@ export default class Videos extends React.Component {
     const tok = api_key+":"+api_secret;
     const hash = base64.encode(tok);
     const Basic = 'Basic ' + hash;
-
-    axios.get('https://api.cloudinary.com/v1_1/dtvoiy5lg/resources/video', {headers : { 'Authorization' : Basic }})
+    const url = 'https://api.cloudinary.com/v1_1/dtvoiy5lg/resources/video/context/?key=username&value=' + this.state.userData
+    console.log(url)
+    axios.get(url, {headers : { 'Authorization' : Basic }})
           .then(res => {
               let a = res.data.resources.splice(0,2)
+              console.log(res.data.resources)
               this.setState({ videos: a, isLoading: true});
           })
           .catch(err =>{
@@ -105,10 +118,6 @@ export default class Videos extends React.Component {
     videos.length ? this.setState({videos: videos}) : this.setState({videos: videos, isLoading: false})
   }
 
-   componentDidMount() {
-    this.getVideos();
-  }
-
   render() {
     let {videos} = this.state
 
@@ -117,7 +126,8 @@ export default class Videos extends React.Component {
         {this.state.isLoading ?
             <VideosLayout videos={videos} 
               navigation={(item, bla) => this.props.navigation.navigate(item, bla)} 
-              removeVideo={(item) => this.removeVideo()}/> : 
+              removeVideo={(item) => this.removeVideo()}
+              userData={this.state.userData}/> : 
               <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} 
               removeVideo={(item) => this.removeVideo()}/>
         }

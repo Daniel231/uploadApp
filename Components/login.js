@@ -18,7 +18,6 @@ export default class Login extends React.Component {
           this.setState(JSON.parse(userData))
           this.props.navigation.navigate("Intro");        
         }
-
       });
   }
 
