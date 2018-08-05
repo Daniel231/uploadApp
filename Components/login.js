@@ -1,5 +1,5 @@
 import React from 'react';
-import {AsyncStorage, StatusBar, Platform, Text, View, Button, StyleSheet } from 'react-native';
+import {AsyncStorage, StatusBar, Platform, Text, View, Button, StyleSheet, Image } from 'react-native';
 import Auth0 from 'react-native-auth0';
 
 const auth0 = new Auth0({ domain: 'uploadapp.eu.auth0.com', clientId: 'EdO35gxmDl3r3YcvE7x4WkrKEhN6s4Xd' });
@@ -61,39 +61,86 @@ export default class Login extends React.Component {
   renderStatusBar = () => <StatusBar backgroundColor={COLORS.secondary} barStyle="dark-content" />;
 
   render = () => {
-    const styles = StyleSheet.create({
-        loginTextSection: {
-           width: '100%',
-           height: '30%',
-        },
+    var styles = StyleSheet.create({
+      container: {
+          flex: 1,
+          flexDirection: 'column'
+      },
+      halfHeight: {
+          flex: 5,
+          backgroundColor: 'white',
+          alignItems: 'center',
+      },
+      quarterHeight: {
+          flex: 1,
+          backgroundColor: 'white',
+          alignItems: 'center',
+      },
+      logo: {
+       margin:'auto',
+       position: 'relative',
+       top: 70,
+    }
+  });
+    // const styles = StyleSheet.create({
+    //   main:{backgroundColor: 'white'},
+    //     logoSection: {
+    //         width: '100%',
+    //         height: '30%',
+    //         position: 'absolute',
+           
+    //               },
+    //     loginButtonSection: {
+    //        width: '100%',
+    //        height: '30%',
+    //        justifyContent: 'center',
+    //        alignItems: 'center',
+          
+    //     },
      
-        loginButtonSection: {
-           width: '100%',
-           height: '30%',
-           justifyContent: 'center',
-           alignItems: 'center'
-        },
-     
-        loginButton: {
-          backgroundColor: 'blue',
-          color: 'white'
-        }
-     })
+    //     loginButton: {
+    //       backgroundColor: 'blue',
+    //       color: 'white',
+    //     }
+    //  })
     const { accessToken } = this.state;    
     return (
-      <View style={styles.loginButtonSection}>
-           <Button
-                title={accessToken ? 'Logout' : 'Login'}
-                onPress={accessToken ? this.handleLogout : this.handleLogin}
-                style={styles.loginButton}
-            />
+  <View style={styles.container}>
+  
+      <View style={styles.halfHeight} >
+        <Image  style={styles.logo} source={require('./uploadAppLogo.png')} />
+  </View>
+        
+      <View style={styles.quarterHeight} >
+      <Button
+                     title={accessToken ? 'Logout' : 'Login'}
+                     onPress={accessToken ? this.handleLogout : this.handleLogin}
+                     style={styles.loginButton}
+                />
+      <Button
+                   title={'Next - for debugging only'}
+                    onPress={() => {this.props.navigation.navigate("Intro")}}
+                    style={styles.loginButton}
+               />
+  </View>
+      
+  </View>
+      // <View style={styles.main}>
+      //   <Image  style={styles.logoSection} source={require('./uploadAppLogo.png')} />
+      //     <View style={styles.loginButtonSection}>
+      //         <Button
+      //               title={accessToken ? 'Logout' : 'Login'}
+      //               onPress={accessToken ? this.handleLogout : this.handleLogin}
+      //               style={styles.loginButton}
+      //           />
 
-            <Button
-                title={'Next'}
-                onPress={() => {this.props.navigation.navigate("Intro")}}
-                style={styles.loginButton}
-            />
-    </View>
+      //           <Button
+      //               title={'Next - for debugging only'}
+      //               onPress={() => {this.props.navigation.navigate("Intro")}}
+      //               style={styles.loginButton}
+      //           />
+      //    </View>
+      // </View>
     );
   };
 }
