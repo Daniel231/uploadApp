@@ -18,7 +18,6 @@ export default class Login extends React.Component {
           this.setState(JSON.parse(userData))
           this.props.navigation.navigate("Intro");        
         }
-
       });
   }
 
@@ -85,12 +84,6 @@ export default class Login extends React.Component {
            <Button
                 title={accessToken ? 'Logout' : 'Login'}
                 onPress={accessToken ? this.handleLogout : this.handleLogin}
-                style={styles.loginButton}
-            />
-
-            <Button
-                title={'Next'}
-                onPress={() => {this.props.navigation.navigate("Intro")}}
                 style={styles.loginButton}
             />
     </View>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-native';
-import { StyleSheet, Text, View , Modal} from 'react-native';
+import { StyleSheet, Text, View , Modal, AsyncStorage} from 'react-native';
 import axios from 'axios'; // 0.18.0
 import Icon from 'react-native-vector-icons/Feather'
 import CryptoJS from 'crypto-js';
@@ -9,7 +9,7 @@ import PercentageCircle from 'react-native-percentage-circle';
 
 
 export default class Videos extends React.Component {
-  state = { fileds: [],video:{},modalVisible: false, isLoaded: false, a:0};
+  state = { fileds: [],video:{},modalVisible: false, isLoaded: false,a:0, percentCircule: false, username:""};
 
   getFileds() {
     this.setState({ fileds: [{filed: "שדה 1", grade: 100},{filed: "שדה 2", grade: 92},{filed: "שדה 3", grade: 40},{filed: "שדה 4", grade: 85},{filed: "שדה 5", grade: 22}], isLoaded: true});
@@ -22,14 +22,17 @@ export default class Videos extends React.Component {
   uploadVideo() {
     console.log("start")
     let timestamp = (Date.now() / 1000 | 0).toString();
-    let hash_string = 'timestamp=' + timestamp + api_secret
+    // let hash_string = 'context=key=a&timestamp=' + timestamp + api_secret --> upload with key value
+    // let hash_string = 'tags=browser_upload&timestamp=' + timestamp + api_secret --> upload with tag
+    let hash_string = 'context=username=' + this.state.username + '&timestamp=' + timestamp + api_secret
     let signature = CryptoJS.SHA1(hash_string).toString()
 
     var fd = new FormData();
     fd.append('timestamp', timestamp);
     fd.append('api_key', api_key);
     fd.append('signature', signature);
-    // fd.append("tags", "browser_upload"); // Optional - add tag for image admin in Cloudinary
+    // fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
+    fd.append('context', 'username=' +this.state.username); // Optional - add key and value for image admin in Cloudinary
     fd.append("file", {uri: this.state.video , type: 'video/mp4', name: `video_1.mp4`});
     const config = {
       headers: { "X-Requested-With": "XMLHttpRequest" },
@@ -37,7 +40,7 @@ export default class Videos extends React.Component {
         // Do whatever you want with the native progress event
         // console.log('progressEvent', progressEvent);
         var progress = Math.round((progressEvent.loaded * 100.0) / progressEvent.total);
-        this.setState({modalVisible: true})
+        this.setState({percentCircule: true})
         this.setState({a: progress})
         console.log(`onUploadProgress progressEvent.loaded: ${progressEvent.loaded},
       progressEvent.total: ${progressEvent.total}`);
@@ -46,6 +49,7 @@ export default class Videos extends React.Component {
     axios.post(url, fd, config)
       .then((res) => {
         console.log('res', res)
+        this.setState({percentCircule: false})
         alert("succes!")
         this.props.navigation.navigate('Home');
       })
@@ -55,6 +59,12 @@ export default class Videos extends React.Component {
   }
 
    componentDidMount() {
+    AsyncStorage.getItem('userData', (err, userData) => {
+      if(userData){
+        console.log('initial Data',userData);
+        this.setState({username: JSON.parse(userData).name})
+      }
+    })
     const { navigation } = this.props;
     this.setState({video: navigation.getParam('video', 'NO-ID')})
     this.getFileds()
@@ -79,7 +89,7 @@ export default class Videos extends React.Component {
             <Modal
             animationType="slide"
             transparent={true}
-            visible={true}
+            visible={this.state.percentCircule}
             onRequestClose={() => {
               alert('Modal has been closed.');
             }}
