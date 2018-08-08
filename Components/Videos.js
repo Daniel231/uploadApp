@@ -1,13 +1,14 @@
 import React from 'react';
-import { Button } from 'react-native';
-import { StyleSheet, Text, View, AsyncStorage} from 'react-native';
+import { Image } from 'react-native';
+import { StyleSheet, View, AsyncStorage} from 'react-native';
 import axios from 'axios'; // 0.18.0
-import Icon from 'react-native-vector-icons/Feather'
+// import Icon from 'react-native-vector-icons/Feather'
 import Video from 'react-native-video';
-// import Video from 'react-native-af-video-player'
 import ImagePicker from 'react-native-image-picker'
 import {cloud_name, api_key, api_secret} from '../cloudinaryDetails.js'
 import base64 from 'react-native-base64'
+// import { Card } from 'react-native-material-ui';
+import { Drawer,Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 
 const VideosLayout = (props) => {
   const removeVideo = (index) => {
@@ -27,6 +28,7 @@ const VideosLayout = (props) => {
             </View>
           )}
         </View>
+
       </View>
     )
   }
@@ -122,25 +124,59 @@ export default class Videos extends React.Component {
     let {videos} = this.state
 
     return (
-      <View style={styles.main}>
-        {this.state.isLoading ?
-            <VideosLayout videos={videos} 
-              navigation={(item, bla) => this.props.navigation.navigate(item, bla)} 
-              removeVideo={(item) => this.removeVideo()}
-              userData={this.state.userData}/> : 
-              <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} 
-              removeVideo={(item) => this.removeVideo()}/>
-        }
-        {this.state.videos.length < 4 && 
-          <Button title="הוסף סרטון מהמכשיר" onPress={() => this.selectVideoTapped()} style={styles.btn}/>}
-        {this.state.results && <View style={{position:"absolute", bottom:0, width:"100%"}}>
-          <Button
-          title="תוצאות"
-          onPress={() => {this.props.navigation.navigate("Results")} }
-          color="#841584"
-          />
-        </View>}
-      </View>
+         <Container>
+          <Header />
+          <Content>
+            <Card>
+              <CardItem>
+                <Left>
+                  <Icon type="MaterialIcons" name="video-library"/>
+                  <Body>
+                      <Text>שם סרטון:</Text>
+                      <Text note>גמבה</Text>
+                  </Body>
+                  <Right>
+                  <Button transparent>
+                    <Icon name="md-more"/>
+                  </Button>
+                  </Right>
+                </Left>
+              </CardItem>
+              <CardItem cardBody>
+                <Image source={{uri: "https://placeimg.com/140/50/any"}} style={{height: 200, width: null, flex: 1}}/>
+              </CardItem>
+              <CardItem>
+                <Left>
+                  <Button transparent danger>
+                    <Icon name="trash" />
+                    <Text>מחק סירטון</Text>
+                  </Button>
+                </Left>
+                <Right style={{flexDirection:"row"}}>
+                    <Icon name="md-cloud-done" style={{color:'green'}}/>
+                    <Text style={{color: "green", left: 7}}>סרטון בשרת</Text>
+                </Right>
+              </CardItem>
+            </Card>
+          </Content>
+      </Container>
+        // {this.state.isLoading ?
+        //     <VideosLayout videos={videos} 
+        //       navigation={(item, bla) => this.props.navigation.navigate(item, bla)} 
+        //       removeVideo={(item) => this.removeVideo()}
+        //       userData={this.state.userData}/> : 
+        //       <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} 
+        //       removeVideo={(item) => this.removeVideo()}/>
+        // }
+        // {this.state.videos.length < 4 && 
+        //   <Button title="הוסף סרטון מהמכשיר" onPress={() => this.selectVideoTapped()} style={styles.btn}/>}
+        // {this.state.results && <View style={{position:"absolute", bottom:0, width:"100%"}}>
+        //   <Button
+        //   title="תוצאות"
+        //   onPress={() => {this.props.navigation.navigate("Results")} }
+        //   color="#841584"
+        //   />
+        // </View>} 
     );
   }
 }

@@ -3,21 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\jars\classes.jar"
+        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.3.1_3fad1cbeb32c7d6e30879ed82b8328ecba4c44e1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.balysv.materialmenu\material-menu\1.5.4\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="1f6ff1728c297524e82b875ce2dfda946f4bca41">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.balysv.materialmenu-material-menu-1.5.4_b69436beb3fc99a49cd35b85122672009c118c0d.jar" />
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.1_a12b06bfb72f59120babfd1a07b4e1a2ee544222.jar" />
     </item>
     <item
         is-multidex="false"
@@ -27,60 +18,6 @@
         revision="25.0.1"
         sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
         <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.3.0_990b1701c6c55eed6fdd2c3e22283168d90b0645.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.3.1_e353d66367b0cfdccc6c34144a969099b101fd91.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.1_84e651f739d9d390e7377e9245d1993275b65889.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.3.1_21ac74c682e1c32a00c2f75e36e9dee6a84edff9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.3.1_7087120f4b95e600db38018154fd40fa06594529.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\yea\react-native-orientation\unspecified\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="50f028419d2afa2553ede352855d5fcb848f9559">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\yea-react-native-orientation-unspecified_26b0f070785148d5e6a15b732ee83b185d6a479d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.3.1_bed3becc38b64e59d5aeb35f02c8ccaaf5fd4b83.jar" />
     </item>
     <item
         is-multidex="false"
@@ -111,24 +48,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\yea\react-native-keep-awake\unspecified\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="25b4747216a57a7164f8e39248ea3a866b856803">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\yea-react-native-keep-awake-unspecified_6a4dd787761260ed6af503e5dc97992174c13c3a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.3.1_0e576334e5112f3157f40b1cae7dc385fbf4d2a4.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\yea\react-native-auth0\unspecified\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -144,24 +63,6 @@
         revision="25.0.1"
         sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
         <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_5fd0a0a272cc02d11ebd238e1c0158e198a8e820.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_e4f6276beddeff275ebd4d540e53293045bef4f8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.3.1_e4f95fd076a62b9a9471863df1949158508b2ac1.jar" />
     </item>
     <item
         is-multidex="false"
@@ -228,48 +129,21 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_7e8e3352eca27bd10b2eb8e3e1aedf4558719598.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="e31331bdf6b5952badadbfc171f04b95c55d3b16">
         <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.55.4_1c98ec7013e6533bc793793651003325cb1584b8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.3.1_9b89fc48146cea7efca751c6b55cfcdcfde9e104.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.aurelhubert\ahbottomnavigation\2.0.6\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c8ba41bea7f78f8bdf3a803b9d08eb3fff416706">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.aurelhubert-ahbottomnavigation-2.0.6_3eac118674c00fe23b03f88852d7aa7001432dcf.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.balysv.materialmenu\material-menu-toolbar\1.5.4\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="55d7bf547c88cb7c8c7c5cdbf3b06dd66c9750f8">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.balysv.materialmenu-material-menu-toolbar-1.5.4_f43c507cd2dd7ebaa216208ceb5220be3270e4fb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.3.1_f1c5683020bd720fb5c9feda2df1c8e5fda2aab7.jar" />
     </item>
     <item
         is-multidex="false"
@@ -282,21 +156,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\yea\react-native-navigation\unspecified\jars\classes.jar"
+        jar="C:\Users\Daniel\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="0e0b5d5ad70eb73e694f8fa35518aca16fc28b96">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\yea-react-native-navigation-unspecified_69361df856ccd16c0852dd5ab249381965d461fe.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\yea\react-native-linear-gradient\unspecified\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="10bce3308649051968a5a024ca15a2193838eed4">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\yea-react-native-linear-gradient-unspecified_19d43457cbc14241f5ca04f4df296687aca4b4ae.jar" />
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_79c206865251c0e2cf4275d79b5caa0dd7d6c83d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -345,30 +210,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\jars\classes.jar"
+        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.3.1_f10fced169be6f5c8f3fcee16f5338097142865e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\library-2.4.0_f04fd066cb2942f40899b7b05a2b4e692293b4e4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.3.1_c2c99aeef746d1fd707911bd6bafa2cd4efcffb2.jar" />
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\Daniel\Desktop\uploadApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_2447facbd3decfeddb66a5dda85a674296f5c0a6.jar" />
     </item>
     <item
         is-multidex="false"

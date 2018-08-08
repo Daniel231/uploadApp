@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\src\\main\\res\\raw\\node_modules_expo_vectoricons_fonts_materialicons.ttf"
     },
     {
-        "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw\\node_modules_expo_vectoricons_fonts_simplelineicons.ttf",
-        "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\src\\main\\res\\raw\\node_modules_expo_vectoricons_fonts_simplelineicons.ttf"
-    },
-    {
         "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw\\node_modules_expo_vectoricons_fonts_octicons.ttf",
         "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\src\\main\\res\\raw\\node_modules_expo_vectoricons_fonts_octicons.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw\\node_modules_expo_vectoricons_fonts_simplelineicons.ttf",
+        "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\src\\main\\res\\raw\\node_modules_expo_vectoricons_fonts_simplelineicons.ttf"
     },
     {
         "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw\\node_modules_expo_vectoricons_fonts_evilicons.ttf",

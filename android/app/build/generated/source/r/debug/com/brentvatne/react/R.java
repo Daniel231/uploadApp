@@ -8,38 +8,38 @@ package com.brentvatne.react;
 
 public final class R {
 	public static final class attr {
-		public static final int scalableType = 0x7f01015e;
+		public static final int scalableType = 0x7f0100e6;
 	}
 	public static final class id {
-		public static final int center = 0x7f0f002b;
-		public static final int centerBottom = 0x7f0f004c;
-		public static final int centerBottomCrop = 0x7f0f004d;
-		public static final int centerCrop = 0x7f0f003c;
-		public static final int centerInside = 0x7f0f003d;
-		public static final int centerTop = 0x7f0f004e;
-		public static final int centerTopCrop = 0x7f0f004f;
-		public static final int endInside = 0x7f0f0050;
-		public static final int fitCenter = 0x7f0f003e;
-		public static final int fitEnd = 0x7f0f003f;
-		public static final int fitStart = 0x7f0f0040;
-		public static final int fitXY = 0x7f0f0041;
-		public static final int leftBottom = 0x7f0f0051;
-		public static final int leftBottomCrop = 0x7f0f0052;
-		public static final int leftCenter = 0x7f0f0053;
-		public static final int leftCenterCrop = 0x7f0f0054;
-		public static final int leftTop = 0x7f0f0055;
-		public static final int leftTopCrop = 0x7f0f0056;
-		public static final int none = 0x7f0f0018;
-		public static final int rightBottom = 0x7f0f0057;
-		public static final int rightBottomCrop = 0x7f0f0058;
-		public static final int rightCenter = 0x7f0f0059;
-		public static final int rightCenterCrop = 0x7f0f005a;
-		public static final int rightTop = 0x7f0f005b;
-		public static final int rightTopCrop = 0x7f0f005c;
-		public static final int startInside = 0x7f0f005d;
+		public static final int center = 0x7f0e001a;
+		public static final int centerBottom = 0x7f0e002b;
+		public static final int centerBottomCrop = 0x7f0e002c;
+		public static final int centerCrop = 0x7f0e001b;
+		public static final int centerInside = 0x7f0e001c;
+		public static final int centerTop = 0x7f0e002d;
+		public static final int centerTopCrop = 0x7f0e002e;
+		public static final int endInside = 0x7f0e002f;
+		public static final int fitCenter = 0x7f0e001d;
+		public static final int fitEnd = 0x7f0e001e;
+		public static final int fitStart = 0x7f0e001f;
+		public static final int fitXY = 0x7f0e0020;
+		public static final int leftBottom = 0x7f0e0030;
+		public static final int leftBottomCrop = 0x7f0e0031;
+		public static final int leftCenter = 0x7f0e0032;
+		public static final int leftCenterCrop = 0x7f0e0033;
+		public static final int leftTop = 0x7f0e0034;
+		public static final int leftTopCrop = 0x7f0e0035;
+		public static final int none = 0x7f0e0010;
+		public static final int rightBottom = 0x7f0e0036;
+		public static final int rightBottomCrop = 0x7f0e0037;
+		public static final int rightCenter = 0x7f0e0038;
+		public static final int rightCenterCrop = 0x7f0e0039;
+		public static final int rightTop = 0x7f0e003a;
+		public static final int rightTopCrop = 0x7f0e003b;
+		public static final int startInside = 0x7f0e003c;
 	}
 	public static final class styleable {
-		public static final int[] scaleStyle = { 0x7f01015e };
+		public static final int[] scaleStyle = { 0x7f0100e6 };
 		public static final int scaleStyle_scalableType = 0;
 	}
 }
