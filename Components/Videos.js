@@ -1,13 +1,13 @@
 import React from 'react';
-import { Button } from 'react-native';
-import { StyleSheet, Text, View, AsyncStorage} from 'react-native';
+import { StyleSheet, View, AsyncStorage, ScrollView} from 'react-native';
 import axios from 'axios'; // 0.18.0
-import Icon from 'react-native-vector-icons/Feather'
-import Video from 'react-native-video';
-// import Video from 'react-native-af-video-player'
+// import Video from 'react-native-video';
 import ImagePicker from 'react-native-image-picker'
 import {cloud_name, api_key, api_secret} from '../cloudinaryDetails.js'
 import base64 from 'react-native-base64'
+import VideoCard from "./VideoCard"
+import { Container, Header} from 'native-base';
+
 
 const VideosLayout = (props) => {
   const removeVideo = (index) => {
@@ -122,25 +122,29 @@ export default class Videos extends React.Component {
     let {videos} = this.state
 
     return (
-      <View style={styles.main}>
-        {this.state.isLoading ?
-            <VideosLayout videos={videos} 
-              navigation={(item, bla) => this.props.navigation.navigate(item, bla)} 
-              removeVideo={(item) => this.removeVideo()}
-              userData={this.state.userData}/> : 
-              <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} 
-              removeVideo={(item) => this.removeVideo()}/>
-        }
-        {this.state.videos.length < 4 && 
-          <Button title="הוסף סרטון מהמכשיר" onPress={() => this.selectVideoTapped()} style={styles.btn}/>}
-        {this.state.results && <View style={{position:"absolute", bottom:0, width:"100%"}}>
-          <Button
-          title="תוצאות"
-          onPress={() => {this.props.navigation.navigate("Results")} }
-          color="#841584"
-          />
-        </View>}
-      </View>
+      <Container>
+        <Header />
+        <ScrollView contentContainerStyle={{backgroundColor: "black"}}>
+          {this.state.isLoading ? videos.map((video, index) => <VideoCard video={video} key={index}/>) : <View/>}
+        </ScrollView>
+      </Container>
+        // {/* {this.state.isLoading ?
+        //     <VideosLayout videos={videos} 
+        //       navigation={(item, bla) => this.props.navigation.navigate(item, bla)} 
+        //       removeVideo={(item) => this.removeVideo()}
+        //       userData={this.state.userData}/> : 
+        //       <AddingVideos videos={videos} pickVideo={() => this.pickVideo()} 
+        //       removeVideo={(item) => this.removeVideo()}/>
+        // }
+        // {this.state.videos.length < 4 && 
+        //   <Button title="הוסף סרטון מהמכשיר" onPress={() => this.selectVideoTapped()} style={styles.btn}/>}
+        // {this.state.results && <View style={{position:"absolute", bottom:0, width:"100%"}}>
+        //   <Button
+        //   title="תוצאות"
+        //   onPress={() => {this.props.navigation.navigate("Results")} }
+        //   color="#841584"
+        //   />
+        // </View>} */}
     );
   }
 }

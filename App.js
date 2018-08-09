@@ -6,9 +6,9 @@ import Splash from './Components/splash';
 import VideoFileds from './Components/VideoFileds';
 import Login from './Components/login';
 import Results from './Components/results';
-import { createStackNavigator } from 'react-navigation';
+import { DrawerNavigator } from 'react-navigation';
 
-const RootStack = createStackNavigator({
+const RootStack = DrawerNavigator({
     Login: {
       screen: Login,
       navigationOptions: {header: null}
@@ -35,7 +35,8 @@ const RootStack = createStackNavigator({
     }
   },
   {
-    initialRouteName: 'Login',
+    initialRouteName: 'Home',
+    drawerPosition: 'right'
   },
 );
 
