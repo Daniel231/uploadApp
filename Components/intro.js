@@ -48,6 +48,7 @@ const slides = [
 ];
  
 export default class Intro extends React.Component {
+
   componentWillMount() {
     
     AsyncStorage.getItem('userData', (err, result) => {

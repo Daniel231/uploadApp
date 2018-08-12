@@ -6,36 +6,53 @@ import Splash from './Components/splash';
 import VideoFileds from './Components/VideoFileds';
 import Login from './Components/login';
 import Results from './Components/results';
-import { createStackNavigator } from 'react-navigation';
+import { DrawerNavigator } from 'react-navigation';
 
-const RootStack = createStackNavigator({
-    Login: {
-      screen: Login,
-      navigationOptions: {header: null}
-    },  
-    Splash: {
-      screen: Splash,
-      navigationOptions: {header: null}
-    },
-    Intro: {
-      screen: Intro,
-      navigationOptions: {header: null}
-    },
+const RootStack = DrawerNavigator({
     Home: {
       screen: Videos,
-      navigationOptions: {header: null}
-    },
-    Details: {
-      screen: VideoFileds,
-      navigationOptions: {header: null}
+      navigationOptions: {
+        drawerLabel: "סרטונים"
+      }
     },
     Results: {
       screen: Results,
-      navigationOptions: {header: null}
-    }
+      navigationOptions: {
+        drawerLabel: "תוצאות"
+      }
+    },
+    
+    Details: {
+      screen: VideoFileds,
+      navigationOptions: {
+        drawerLabel: () => {},
+      }
+    },
+    Login: {
+      screen: Login,
+      navigationOptions: {
+        drawerLabel: () => {},
+        drawerLockMode: 'locked-close'
+      }
+    },  
+    Splash: {
+      screen: Splash,
+      navigationOptions: {
+        drawerLabel: () => {},
+        drawerLockMode: 'locked-close'
+      }
+    },
+    Intro: {
+      screen: Intro,
+      navigationOptions: {
+        drawerLabel: () => {},
+        drawerLockMode: 'locked-close'
+      }
+    },
   },
   {
     initialRouteName: 'Home',
+    drawerPosition: 'right'
   },
 );
 

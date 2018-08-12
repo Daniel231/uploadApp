@@ -52,3 +52,6 @@ yarn-error.log*
 #cloudinary
 ./cloudinaryDetails.js
 cloudinaryDetails.js
+
+#android
+/android
