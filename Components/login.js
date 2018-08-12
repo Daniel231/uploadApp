@@ -116,11 +116,11 @@ export default class Login extends React.Component {
                      onPress={accessToken ? this.handleLogout : this.handleLogin}
                      style={styles.loginButton}
                 />
-      <Button
+      {/* <Button
                    title={'Next - for debugging only'}
                     onPress={() => {this.props.navigation.navigate("Intro")}}
                     style={styles.loginButton}
-               />
+               /> */}
   </View>
       
   </View>

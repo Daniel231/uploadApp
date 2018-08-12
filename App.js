@@ -51,7 +51,7 @@ const RootStack = DrawerNavigator({
     },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Splash',
     drawerPosition: 'right'
   },
 );
