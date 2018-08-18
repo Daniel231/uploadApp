@@ -5,10 +5,10 @@ import ImagePicker from 'react-native-image-picker'
 export default class AddVideo extends React.Component {
     selectVideoTapped() {
         const options = {
-          title: 'בחירת וידיאו',
-          takePhotoButtonTitle: 'צלם מהמצלמה',
-          chooseFromLibraryButtonTitle:'בחר מגלריה',
-          cancelButtonTitle:'ביטול',
+          title: 'Choose video',
+          takePhotoButtonTitle: 'Capture from camera',
+          chooseFromLibraryButtonTitle:'Choose from gallery',
+          cancelButtonTitle:'Cancel',
           mediaType: 'video',
           videoQuality: 'medium'
         };

@@ -4,7 +4,7 @@ import { StyleSheet , View, Image, Dimensions} from 'react-native';
 export default class Splash extends React.Component {
   componentDidMount() {
         setTimeout(() => {
-            this.props.navigation.navigate("Intro")
+            this.props.navigation.navigate("Login")
         }, 2000);
     }
   render() {

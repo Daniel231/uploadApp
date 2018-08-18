@@ -1,32 +1,54 @@
 import React from 'react';
-import { StyleSheet, Text, View , Modal, AsyncStorage, ImageBackground, Linking} from 'react-native';
+import { StyleSheet, Text, View , Modal, AsyncStorage, ImageBackground, Linking, BackHandler, Picker} from 'react-native';
 import axios from 'axios';
 import CryptoJS from 'crypto-js';
 import {url, api_key, api_secret} from '../cloudinaryDetails.js'
-import PercentageCircle from 'react-native-percentage-circle';  
-import { Container, Content, Textarea,Header, Form, Label,Right,Input, Card, CardItem, Body, Button, Icon} from "native-base";
+import Pie from 'react-native-progress/Pie'
+import { Container, Content, Textarea,Header, Form, Label,Right,Input, Card, CardItem, Body, Button, Icon, Left} from "native-base";
+import SnackBar from 'react-native-snackbar-dialog'
+
 
 export default class Videos extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+  }
+
   state = {
-      text:"",
-      video:{},
-      circylePercent:0, 
-      percentCirculeVisible: false, 
-      username:""};
+    videoInfo:"",
+    video:{},
+    circylePercent:0, 
+    percentCirculeVisible: false, 
+    username:"",
+    ageKind:"Months"};
+
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+
+  componentWillUnmount() {
+      BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+
+  handleBackButtonClick() {
+      this.props.navigation.goBack(null);
+      return true;
+  }
 
   uploadVideo() {
-    console.log("start")
+    let data = {age: this.state.age, videoInfo: this.state.videoInfo, ageKind: this.state.ageKind}
     let timestamp = (Date.now() / 1000 | 0).toString();
     // let hash_string = 'context=key=a&timestamp=' + timestamp + api_secret --> upload with key value
     // let hash_string = 'tags=browser_upload&timestamp=' + timestamp + api_secret --> upload with tag
-    let hash_string = 'context=username=' + this.state.username + '&timestamp=' + timestamp + api_secret
+    let hash_string = 'context=username=' + this.state.username+ "|data=" +  JSON.stringify(data) + '&timestamp=' + timestamp + api_secret
     let signature = CryptoJS.SHA1(hash_string).toString()
     var fd = new FormData();
     fd.append('timestamp', timestamp);
     fd.append('api_key', api_key);
     fd.append('signature', signature);
     // fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
-    fd.append('context', 'username=' +this.state.username); // Optional - add key and value for image admin in Cloudinary
+    fd.append('context', 'username=' +this.state.username + "|data=" + JSON.stringify(data)); // Optional - add key and value for image admin in Cloudinary
     fd.append("file", {uri: this.state.video , type: 'video/mp4', name: `video_1.mp4`});
     const config = {
       headers: { "X-Requested-With": "XMLHttpRequest" },
@@ -35,7 +57,7 @@ export default class Videos extends React.Component {
         // console.log('progressEvent', progressEvent);
         var progress = Math.round((progressEvent.loaded * 100.0) / progressEvent.total);
         this.setState({percentCirculeVisible: true})
-        this.setState({circylePercent: progress})
+        this.setState({circylePercent: progress / 100})
         console.log(`onUploadProgress progressEvent.loaded: ${progressEvent.loaded},
       progressEvent.total: ${progressEvent.total}`);
       }
@@ -44,8 +66,12 @@ export default class Videos extends React.Component {
       .then((res) => {
         console.log('res', res)
         this.setState({percentCircule: false})
-        alert("succes!")
         this.props.navigation.navigate('Home');
+        SnackBar.show('Video successfuly uploaded!', {
+          backgroundColor: '#3f51b5',
+          textColor: 'white',
+          duration: 1000
+        })
       })
       .catch((err) => {
         console.error('err', JSON.stringify(err));
@@ -70,34 +96,41 @@ export default class Videos extends React.Component {
   }
 
   render() {
-
+    let videoData = this.state.video.url && JSON.parse(this.state.video.context.custom.data);
     return (
       <Container>
         <Header>
-          <Icon name="menu" onPress={() => this.props.navigation.toggleDrawer()} style={{color:"white", top:15, left: 15}}/>
-          <Body style={{left: 30}}>
-            <Text style={{color: "white", fontSize:20}}>פרטי סירטון</Text>
+          <Body style={{left: 70}}>
+            <Text style={{color: "white", fontSize:20}}>Video information</Text>
           </Body>
+          <Icon name="md-arrow-round-back" onPress={() => this.props.navigation.goBack(null)} style={{color:"white", top:15, right: 15}}/>
         </Header>
       <Content padder>
           <Card transparent>
-            <CardItem header>
-              <Text>פרטי הסירטון</Text>
-            </CardItem>
             <CardItem>
               <Body>
                 <Form style={{width: 300}}>
-                  <Label>גיל הילד</Label>
+                  <Label>Children age</Label>
                   {this.state.video.url ?
-                  <Text style={{direction:"rtl"}}>{this.state.video.context.custom.kidAge}</Text>
+                  <Text>{videoData.age} {videoData.ageKind}</Text>
                   :
-                  <Input style={{width: 60, direction:"rtl", borderBottomWidth:1, bottom: 10}} keyboardType = 'numeric' onChangeText = {(age)=> this.onChanged(age)} value = {this.state.age}/>
+                  <View style={{flexDirection:"row-reverse"}}>
+                    <Input style={{borderBottomWidth:1, bottom: 10}} keyboardType = 'numeric' onChangeText = {(age)=> this.onChanged(age)} value = {this.state.age}/>
+                    <Picker
+                      mode="dropdown"
+                      selectedValue={this.state.ageKind}
+                      style={{ height: 50, width: 150 }}
+                      onValueChange={(itemValue, itemIndex) => this.setState({ageKind: itemValue})}>
+                      <Picker.Item label="Months" value="Months" />
+                      <Picker.Item label="Years" value="Years" />
+                    </Picker>
+                  </View>
                   }
-                  <Label>הערות</Label>
+                  <Label>Notes</Label>
                   {this.state.video.url ?
-                  <Textarea editable={false} rowSpan={5} bordered value={this.state.video.context.custom.videoInfo}/>
+                  <Textarea editable={false} rowSpan={5} bordered value={videoData.videoInfo}/>
                   :
-                  <Textarea rowSpan={5} bordered placeholder="יש למלא עד 200 תווים.." maxLength={200} onChangeText={(text) => this.setState({text:text})} value={this.state.text}/>
+                  <Textarea rowSpan={5} bordered placeholder="You can fill up to 200 chars.." maxLength={200} onChangeText={(text) => this.setState({videoInfo:text})} value={this.state.videoInfo}/>
                   }
                   {this.state.video.url ?
                   <CardItem button cardBody onPress={() => Linking.openURL(this.state.video.url)} style={{top: 10}}>
@@ -128,12 +161,12 @@ export default class Videos extends React.Component {
           justifyContent: 'center',
           alignItems: 'center', backgroundColor: '#00000080'}}>
           <View>
-            <PercentageCircle radius={35} percent={this.state.circylePercent} color={"#3498db"}></PercentageCircle>
+            <Pie size={70} progress={this.state.circylePercent} color={"#3498db"}/>
           </View>
         </View>
       </Modal>
       </Container>
-      );
+      )
   }
 }
 

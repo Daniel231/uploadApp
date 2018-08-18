@@ -1,10 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,BackHandler } from 'react-native';
 import axios from 'axios'; // 0.18.0
 import { Container, Content, Textarea,Header, Form, Label,Right,Input, Card, CardItem, Body, Button, Icon} from "native-base";
 
 
 export default class Videos extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+  }
+
   state = { fileds: [],isLoaded: false};
 
   getFileds() {
@@ -14,16 +19,30 @@ export default class Videos extends React.Component {
    componentDidMount() {
     this.getFileds()
   }
+
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+
+  componentWillUnmount() {
+      BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+
+  handleBackButtonClick() {
+      this.props.navigation.navigate("Home");
+      return true;
+  }
+
   render() {
     let {fileds} = this.state
 
     return (
       <Container>
         <Header>
-          <Icon name="menu" onPress={() => this.props.navigation.toggleDrawer()} style={{color:"white", top:15, left: 15}}/>
-          <Body style={{left: 30}}>
-            <Text style={{color: "white", fontSize:20}}>תוצאות</Text>
+          <Body style={{left: 130}}>
+            <Text style={{color: "white", fontSize:20}}>Results</Text>
           </Body>
+          <Icon name="menu" onPress={() => this.props.navigation.toggleDrawer()} style={{color:"white", top:15, right: 15}}/>
         </Header>
             <Content >
             <Card>

@@ -23,48 +23,28 @@ const slides = [
     fontColor: '#fff',
     level: 10,
   },
-  {
-    key: 'somethun-dos',
-    title: 'כותרת 2',
-    text: 'להאמית קרהשק סכעיט דז מא, מנכם למטכין נשואי מנורך.',
-    img: require('../assets/images/2.png'),
-    imgStyle: {
-      height: 80 * 2.5,
-      width: 109 * 2.5,
-    },
-    backgroundColor: '#febe29',
-  },
-  {
-    key: 'somethun1',
-    title: 'בחור מגניב',
-    text: 'מוסן מנת. להאמית קרהשק סכעיט דז מא, מנכם למטכין נשואי מנורך.\n\nקולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף לורם איפסום דולור סיט אמט,',
-    img: require('../assets/images/3.png'),
-    imgStyle: {
-      height: 80 * 2.5,
-      width: 109 * 2.5,
-    },
-    backgroundColor: '#22bcb5',
-  }
 ];
  
 export default class Intro extends React.Component {
-
   componentWillMount() {
-    
-    AsyncStorage.getItem('userData', (err, result) => {
-      console.log("intro will mount", result)
+    AsyncStorage.getItem('userIntro', (err, userIntro) => {
+      if(userIntro){
+        this.props.navigation.navigate("Home");        
+      } else {
+        AsyncStorage.setItem('userIntro', true);
+      }
     });
   }    
   _onDone = () => {
     this.props.navigation.navigate("Home")
   }
+  
   render() {
     return (
       <AppIntroSlider
         slides={slides}
         onDone={this._onDone}
-        doneLabel="סיום"
-        nextLabel="הבא"
+        doneLabel="Finish"
       />
     );
   }

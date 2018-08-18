@@ -1,19 +1,19 @@
 [
     {
-        "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\node_modules_reactnavigation_src_views_assets_backiconmask.png",
-        "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnavigation_src_views_assets_backiconmask.png"
-    },
-    {
         "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\node_modules_reactnativeelements_src_rating_images_heart.png",
         "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnativeelements_src_rating_images_heart.png"
     },
     {
-        "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\abc_ic_menu_selectall_mtrl_alpha.png",
-        "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_ic_menu_selectall_mtrl_alpha.png"
+        "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\node_modules_reactnavigation_src_views_assets_backiconmask.png",
+        "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnavigation_src_views_assets_backiconmask.png"
     },
     {
         "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\node_modules_reactnativeelements_src_rating_images_star.png",
         "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\src\\main\\res\\drawable-mdpi\\node_modules_reactnativeelements_src_rating_images_star.png"
+    },
+    {
+        "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\abc_spinner_mtrl_am_alpha.9.png",
@@ -40,12 +40,12 @@
         "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\abc_list_divider_mtrl_alpha.9.png",
-        "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\abc_list_longpressed_holo.9.png",
         "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\abc_textfield_default_mtrl_alpha.9.png",
@@ -90,6 +90,10 @@
     {
         "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\abc_btn_switch_to_on_mtrl_00001.9.png",
         "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\assets_images_uploadapplogo.png",
+        "source": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\src\\main\\res\\drawable-mdpi\\assets_images_uploadapplogo.png"
     },
     {
         "merged": "C:\\Users\\Daniel\\Desktop\\uploadApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\abc_btn_rating_star_off_mtrl_alpha.png",

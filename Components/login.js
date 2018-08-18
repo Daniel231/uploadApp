@@ -1,6 +1,7 @@
 import React from 'react';
 import {AsyncStorage, StatusBar, Platform, Text, View, Button, StyleSheet, Image } from 'react-native';
 import Auth0 from 'react-native-auth0';
+import axios from 'axios';
 
 const auth0 = new Auth0({ domain: 'uploadapp.eu.auth0.com', clientId: 'EdO35gxmDl3r3YcvE7x4WkrKEhN6s4Xd' });
 
@@ -30,18 +31,21 @@ export default class Login extends React.Component {
           .auth
           .userInfo({token: credentials.accessToken})
           .then((user) => {
-            const userData = {
-              accessToken: credentials.accessToken,
-              avatar: user.picture,
-              name: user.nickname
-            }
-            console.log("user data after log:", userData)
-
-            AsyncStorage.setItem('userData',JSON.stringify(userData),
-              () => {this.setState(userData)
-              this.props.navigation.navigate("Intro")},
-              (error) => console.log(error)
-            );
+            axios.post("https://videos-diagnosis.herokuapp.com/diagnosis", {userName: user.nickname})
+            .then((response) => {
+              const userData = {
+                accessToken: credentials.accessToken,
+                avatar: user.picture,
+                name: user.nickname
+              }
+              console.log("user data after log:", userData)
+  
+              AsyncStorage.setItem('userData',JSON.stringify(userData),
+                () => {this.setState(userData)
+                this.props.navigation.navigate("Intro")},
+                (error) => console.log(error)
+              );
+            })
           })
           .catch(error => console.error(error))
       })
@@ -81,27 +85,7 @@ export default class Login extends React.Component {
        top: 70,
     }
   });
-    // const styles = StyleSheet.create({
-    //   main:{backgroundColor: 'white'},
-    //     logoSection: {
-    //         width: '100%',
-    //         height: '30%',
-    //         position: 'absolute',
-           
-    //               },
-    //     loginButtonSection: {
-    //        width: '100%',
-    //        height: '30%',
-    //        justifyContent: 'center',
-    //        alignItems: 'center',
-          
-    //     },
-     
-    //     loginButton: {
-    //       backgroundColor: 'blue',
-    //       color: 'white',
-    //     }
-    //  })
+
     const { accessToken } = this.state;    
     return (
   <View style={styles.container}>
@@ -124,22 +108,6 @@ export default class Login extends React.Component {
   </View>
       
   </View>
-      // <View style={styles.main}>
-      //   <Image  style={styles.logoSection} source={require('./uploadAppLogo.png')} />
-      //     <View style={styles.loginButtonSection}>
-      //         <Button
-      //               title={accessToken ? 'Logout' : 'Login'}
-      //               onPress={accessToken ? this.handleLogout : this.handleLogin}
-      //               style={styles.loginButton}
-      //           />
-
-      //           <Button
-      //               title={'Next - for debugging only'}
-      //               onPress={() => {this.props.navigation.navigate("Intro")}}
-      //               style={styles.loginButton}
-      //           />
-      //    </View>
-      // </View>
     );
   };
 }

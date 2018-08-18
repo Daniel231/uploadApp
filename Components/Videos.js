@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, AsyncStorage, ScrollView, Text} from 'react-native';
+import { StyleSheet, View, AsyncStorage, ScrollView} from 'react-native';
 import axios from 'axios';
 import {cloud_name, api_key, api_secret} from '../cloudinaryDetails.js'
 import base64 from 'react-native-base64'
 import VideoCard from "./VideoCard"
 import AddVideo from "./AddVideo"
-import { Container, Header, Button, Icon, Right, Left, Spinner, Body} from 'native-base';
+import { Container, Header, Button, Icon, Right, Left, Spinner, Body, Content, Text} from 'native-base';
 
 export default class Videos extends React.Component {
 
@@ -62,26 +62,29 @@ export default class Videos extends React.Component {
     return (
       <Container>
         <Header>
-          <Icon name="menu" onPress={() => this.props.navigation.toggleDrawer()} style={{color:"white", top:15, left: 15}}/>
-          <Body style={{left: 30}}>
-            <Text style={{color: "white", fontSize:20}}>סרטונים</Text>
+          <Body style={{left: 130}}>
+            <Text style={{color: "white", fontSize:20}}>Videos</Text>
           </Body>
+          <Icon name="menu" onPress={() => this.props.navigation.toggleDrawer()} style={{color:"white", top:15, right: 15}}/>
         </Header>
         {this.state.isLoading ?
-        <ScrollView>
-          {videos.length == 0 ?
-            <AddVideo addVideo={(item) => this.addVideo(item)}/>
-            :
-            videos.length < 4 ?
-              [videos.map((video, index) => <VideoCard navigation={(item, bla) => this.props.navigation.navigate(item, bla)} video={video} key={index} removeVideo={(item) => this.removeVideo()}/>) ,<AddVideo addVideo={(item) => this.addVideo(item)}/>]
+        <Content>
+          <Text style={{justifyContent:"center", alignSelf:"center"}}>Please upload at list 4 videos</Text>
+          <ScrollView>
+            {videos.length == 0 ?
+              <AddVideo addVideo={(item) => this.addVideo(item)}/>
               :
-              videos.map((video, index) => <VideoCard navigation={(item, bla) => this.props.navigation.navigate(item, bla)} video={video} key={index} removeVideo={(item) => this.removeVideo()}/>)
-          }
-        </ScrollView>
+              videos.length < 4 ?
+                [videos.map((video, index) => <VideoCard navigation={(item, bla) => this.props.navigation.navigate(item, bla)} video={video} key={index} removeVideo={(item) => this.removeVideo()}/>) ,<AddVideo addVideo={(item) => this.addVideo(item)}/>]
+                :
+                videos.map((video, index) => <VideoCard navigation={(item, bla) => this.props.navigation.navigate(item, bla)} video={video} key={index} removeVideo={(item) => this.removeVideo()}/>)
+            }
+          </ScrollView>
+        </Content>
         :
         <Body style={{alignContent:"center", justifyContent:"center"}}>
             <Spinner color='blue'/>
-            <Text>טוען סרטונים מהשרת..</Text>
+            <Text>Loading videos from server..</Text>
           </Body>}
       </Container>
     );

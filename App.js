@@ -12,16 +12,29 @@ const RootStack = DrawerNavigator({
     Home: {
       screen: Videos,
       navigationOptions: {
-        drawerLabel: "סרטונים"
+        drawerLabel: "Videos"
       }
     },
     Results: {
       screen: Results,
       navigationOptions: {
-        drawerLabel: "תוצאות"
+        drawerLabel: "Results"
       }
     },
-    
+    Intro: {
+      screen: Intro,
+      navigationOptions: {
+        drawerLabel: "Guide",
+        drawerLockMode: "locked-open"
+      }
+    },
+    Splash: {
+      screen: Splash,
+      navigationOptions: {
+        drawerLabel: () => {},
+        drawerLockMode: "locked-open"
+      }
+    },
     Details: {
       screen: VideoFileds,
       navigationOptions: {
@@ -34,25 +47,10 @@ const RootStack = DrawerNavigator({
         drawerLabel: () => {},
         drawerLockMode: "locked-open"
       }
-    },  
-    Splash: {
-      screen: Splash,
-      navigationOptions: {
-        drawerLabel: () => {},
-        drawerLockMode: "locked-open"
-      }
-    },
-    Intro: {
-      screen: Intro,
-      navigationOptions: {
-        drawerLabel: () => {},
-        drawerLockMode: "locked-open"
-      }
     },
   },
   {
     initialRouteName: 'Splash',
-    drawerPosition: 'right'
   },
 );
 
