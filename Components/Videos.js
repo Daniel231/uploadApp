@@ -77,9 +77,9 @@ export default class Videos extends React.Component {
               <AddVideo addVideo={(item) => this.addVideo(item)}/>
               :
               videos.length < 4 ?
-                [videos.map((video, index) => <VideoCard navigation={(item, bla) => this.props.navigation.navigate(item, bla)} video={video} key={index} removeVideo={(item) => this.removeVideo()}/>) ,<AddVideo addVideo={(item) => this.addVideo(item)}/>]
+                [videos.map((video, index) => <VideoCard navigation={(item, bla) => this.props.navigation.navigate(item, bla)} video={video} key={index} removeVideo={(item) => this.removeVideo(item)}/>) ,<AddVideo addVideo={(item) => this.addVideo(item)}/>]
                 :
-                videos.map((video, index) => <VideoCard navigation={(item, bla) => this.props.navigation.navigate(item, bla)} video={video} key={index} removeVideo={(item) => this.removeVideo()}/>)
+                videos.map((video, index) => <VideoCard navigation={(item, bla) => this.props.navigation.navigate(item, bla)} video={video} key={index} removeVideo={(item) => this.removeVideo(item)}/>)
             }
           </ScrollView>
         </Content>

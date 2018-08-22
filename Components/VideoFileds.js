@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View , Modal, AsyncStorage, ImageBackground, Linking, BackHandler, Picker} from 'react-native';
+import { StyleSheet, Text, View , Modal, AsyncStorage, ImageBackground, Linking, BackHandler, Picker, TextInput} from 'react-native';
 import axios from 'axios';
 import CryptoJS from 'crypto-js';
 import {url, api_key, api_secret} from '../cloudinaryDetails.js'
@@ -32,12 +32,12 @@ export default class Videos extends React.Component {
   }
 
   handleBackButtonClick() {
-      this.props.navigation.goBack(null);
+      this.props.navigation.navigate("Home");
       return true;
   }
 
   uploadVideo() {
-    let data = {age: this.state.age, videoInfo: this.state.videoInfo, ageKind: this.state.ageKind, videoName: this.state.video.videoName}
+    let data = {age: this.state.age, videoInfo: this.state.videoInfo, ageKind: this.state.ageKind, videoName: this.state.video.name}
     let timestamp = (Date.now() / 1000 | 0).toString();
     // let hash_string = 'context=key=a&timestamp=' + timestamp + api_secret --> upload with key value
     // let hash_string = 'tags=browser_upload&timestamp=' + timestamp + api_secret --> upload with tag
@@ -103,23 +103,31 @@ export default class Videos extends React.Component {
           <Body style={{left: 70}}>
             <Text style={{color: "white", fontSize:20}}>Video information</Text>
           </Body>
-          <Icon name="md-arrow-round-back" onPress={() => this.props.navigation.goBack(null)} style={{color:"white", top:15, right: 15}}/>
+          <Icon name="md-arrow-round-back" onPress={() => this.props.navigation.navigate("Home")} style={{color:"white", top:15, right: 15}}/>
         </Header>
       <Content padder>
           <Card transparent>
             <CardItem>
               <Body>
                 <Form style={{width: 300}}>
+                  {this.state.video.url ?
+                  <CardItem button cardBody onPress={() => Linking.openURL(this.state.video.url)} style={{bottom: 10}}>
+                      <ImageBackground source={{uri: this.state.video.url.replace(".mp4",".jpg")}} style={{height: 200, width: null, flex: 1,}}/>
+                      <Icon type="FontAwesome" name="play-circle" style={{position: "absolute", left: 120, color:"white", fontSize:50, width: 50}}/>
+                  </CardItem>
+                  :
+                    null
+                  }
                   <Label>Children age</Label>
                   {this.state.video.url ?
                   <Text>{videoData.age} {videoData.ageKind}</Text>
                   :
-                  <View style={{flexDirection:"row-reverse"}}>
-                    <Input style={{borderBottomWidth:1, bottom: 10}} keyboardType = 'numeric' onChangeText = {(age)=> this.onChanged(age)} value = {this.state.age}/>
+                  <View style={{flexDirection:"row"}}>
+                    <Input style={{borderBottomWidth:1}} keyboardType = 'numeric' onChangeText = {(age)=> this.onChanged(age)} value = {this.state.age}/>
                     <Picker
                       mode="dropdown"
                       selectedValue={this.state.ageKind}
-                      style={{ height: 50, width: 150 }}
+                      style={{ height: 50, width: 120 }}
                       onValueChange={(itemValue, itemIndex) => this.setState({ageKind: itemValue})}>
                       <Picker.Item label="Months" value="Months" />
                       <Picker.Item label="Years" value="Years" />
@@ -131,14 +139,6 @@ export default class Videos extends React.Component {
                   <Textarea editable={false} rowSpan={5} bordered value={videoData.videoInfo}/>
                   :
                   <Textarea rowSpan={5} bordered placeholder="You can fill up to 200 chars.." maxLength={200} onChangeText={(text) => this.setState({videoInfo:text})} value={this.state.videoInfo}/>
-                  }
-                  {this.state.video.url ?
-                  <CardItem button cardBody onPress={() => Linking.openURL(this.state.video.url)} style={{top: 10}}>
-                      <ImageBackground source={{uri: this.state.video.url.replace(".mp4",".jpg")}} style={{height: 200, width: null, flex: 1,}}/>
-                      <Icon type="FontAwesome" name="play-circle" style={{position: "absolute", left: 120, color:"white", fontSize:50, width: 50}}/>
-                  </CardItem>
-                  :
-                    null
                   }
                 </Form>
               </Body>

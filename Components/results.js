@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View,BackHandler } from 'react-native';
+import { StyleSheet, View,BackHandler } from 'react-native';
 import axios from 'axios'; // 0.18.0
-import { Container, Content, Textarea,Header, Form, Label,Right,Input, Card, CardItem, Body, Button, Icon} from "native-base";
+import { Container, Content, Textarea,Header, Form, Label,Right,Input, Card, CardItem, Body, Button, Icon, Text} from "native-base";
 
 
 export default class Videos extends React.Component {
@@ -44,17 +44,11 @@ export default class Videos extends React.Component {
           </Body>
           <Icon name="menu" onPress={() => this.props.navigation.toggleDrawer()} style={{color:"white", top:15, right: 15}}/>
         </Header>
-            <Content >
+            <Content style={{top: 150}}>
             <Card>
                 <CardItem>
                 <Body>
-                {
-                  this.state.isLoaded &&
-                  <View style={styles.fileds}>
-                    {fileds.map((item,i) =>
-                  <Text key ={i}>{item.filed} : {item.grade}</Text>)}
-                  </View>
-                }
+                <Text style={{fontSize: 50, alignSelf: "center", justifyContent:"center"}}>No Results</Text>
                 </Body>
                 </CardItem>
             </Card>

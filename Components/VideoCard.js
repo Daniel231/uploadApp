@@ -12,7 +12,7 @@ export default class VideoCard extends React.Component {
                     <Left>
                     <Body style={{padding: 5}}>
                         <Text>Video name: </Text>
-                        {this.props.video.url ? <Text note>{this.props.video.videoName}</Text> : <Text note>{this.props.video.name}</Text>}
+                        {this.props.video.url ? <Text note>{JSON.parse(this.props.video.context.custom.data).videoName}</Text> : <Text note>{this.props.video.name}</Text>}
                     </Body>
                     </Left>
                     <Icon type="MaterialIcons" name="video-library" style={{right: 0}}/>
@@ -34,7 +34,12 @@ export default class VideoCard extends React.Component {
                         </Button>
                     </Right>
                     :
-                    null
+                    <Left>
+                        <Button transparent danger onPress={() => this.props.removeVideo(this.props.video)}>
+                            <Text>Delete Video</Text>
+                            <Icon name="trash"/>
+                        </Button>
+                    </Left>
                 }
                     { this.props.video.url ?
                     <Left style={{flexDirection:"row"}}>

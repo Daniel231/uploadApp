@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, AsyncStorage } from 'react-native';
-import AppIntroSlider from 'react-native-app-intro-slider-rtl';
+import AppIntroSlider from 'react-native-app-intro-slider';
  
 const styles = StyleSheet.create({
   image: {
