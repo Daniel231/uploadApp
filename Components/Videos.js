@@ -51,8 +51,10 @@ export default class Videos extends React.Component {
   }
 
   addVideo(item) {
+    videoName = "Video " + (this.state.videos.length == 0 ? 1 : this.state.videos.length + 1)
+    videoDetails = {name: videoName, path: item.path, uri: item.uri}
     this.setState(prevState => ({
-      videos: [...prevState.videos,item]
+      videos: [videoDetails,...prevState.videos]
     }));
   }
 
@@ -69,7 +71,7 @@ export default class Videos extends React.Component {
         </Header>
         {this.state.isLoading ?
         <Content>
-          <Text style={{justifyContent:"center", alignSelf:"center"}}>Please upload at list 4 videos</Text>
+          <Text style={{justifyContent:"center", alignSelf:"center"}}>Please upload 4 videos</Text>
           <ScrollView>
             {videos.length == 0 ?
               <AddVideo addVideo={(item) => this.addVideo(item)}/>

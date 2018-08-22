@@ -25,7 +25,7 @@ export default class AddVideo extends React.Component {
             console.log('User tapped custom button: ', response.customButton);
           }
           else {
-            this.props.addVideo(response.uri)
+            this.props.addVideo(response)
           }
         });
       }

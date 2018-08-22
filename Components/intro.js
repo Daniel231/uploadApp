@@ -26,15 +26,15 @@ const slides = [
 ];
  
 export default class Intro extends React.Component {
-  componentWillMount() {
-    AsyncStorage.getItem('userIntro', (err, userIntro) => {
-      if(userIntro){
-        this.props.navigation.navigate("Home");        
-      } else {
-        AsyncStorage.setItem('userIntro', true);
-      }
-    });
-  }    
+  // componentWillMount() {
+  //   AsyncStorage.getItem('userIntro', (err, userIntro) => {
+  //     if(userIntro){
+  //       this.props.navigation.navigate("Home");        
+  //     } else {
+  //       AsyncStorage.setItem('userIntro', true);
+  //     }
+  //   });
+  // }    
   _onDone = () => {
     this.props.navigation.navigate("Home")
   }

@@ -37,7 +37,7 @@ export default class Videos extends React.Component {
   }
 
   uploadVideo() {
-    let data = {age: this.state.age, videoInfo: this.state.videoInfo, ageKind: this.state.ageKind}
+    let data = {age: this.state.age, videoInfo: this.state.videoInfo, ageKind: this.state.ageKind, videoName: this.state.video.videoName}
     let timestamp = (Date.now() / 1000 | 0).toString();
     // let hash_string = 'context=key=a&timestamp=' + timestamp + api_secret --> upload with key value
     // let hash_string = 'tags=browser_upload&timestamp=' + timestamp + api_secret --> upload with tag
@@ -49,7 +49,7 @@ export default class Videos extends React.Component {
     fd.append('signature', signature);
     // fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
     fd.append('context', 'username=' +this.state.username + "|data=" + JSON.stringify(data)); // Optional - add key and value for image admin in Cloudinary
-    fd.append("file", {uri: this.state.video , type: 'video/mp4', name: `video_1.mp4`});
+    fd.append("file", {uri: this.state.video.uri , type: 'video/mp4', name: `video_1.mp4`});
     const config = {
       headers: { "X-Requested-With": "XMLHttpRequest" },
       onUploadProgress: (progressEvent) => {

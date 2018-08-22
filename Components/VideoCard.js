@@ -12,7 +12,7 @@ export default class VideoCard extends React.Component {
                     <Left>
                     <Body style={{padding: 5}}>
                         <Text>Video name: </Text>
-                        <Text note>Video</Text>
+                        {this.props.video.url ? <Text note>{this.props.video.videoName}</Text> : <Text note>{this.props.video.name}</Text>}
                     </Body>
                     </Left>
                     <Icon type="MaterialIcons" name="video-library" style={{right: 0}}/>
