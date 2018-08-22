@@ -47,6 +47,9 @@ export default class Videos extends React.Component {
   removeVideo(videoItem) {
     let {videos} = this.state
     videos.splice(videos.indexOf(videoItem), 1)
+    videos.forEach(function(part, index, theArray) {
+      theArray[index].url ? null : theArray[index].name = "Video " + (theArray.length - index);
+    });
     this.setState({videos: videos})
   }
 
