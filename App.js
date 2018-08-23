@@ -4,33 +4,53 @@ import Videos from './Components/Videos';
 import Intro from './Components/intro';
 import Splash from './Components/splash';
 import VideoFileds from './Components/VideoFileds';
+import Login from './Components/login';
 import Results from './Components/results';
-import { createStackNavigator } from 'react-navigation';
+import { DrawerNavigator } from 'react-navigation';
 
-const RootStack = createStackNavigator({
-    Splash: {
-      screen: Splash,
-      navigationOptions: {header: null}
-    },
-    Intro: {
-      screen: Intro,
-      navigationOptions: {header: null}
-    },
+const RootStack = DrawerNavigator({
     Home: {
       screen: Videos,
-      navigationOptions: {header: null}
-    },
-    Details: {
-      screen: VideoFileds,
-      navigationOptions: {header: null}
+      navigationOptions: {
+        drawerLabel: "Videos"
+      }
     },
     Results: {
       screen: Results,
-      navigationOptions: {header: null}
-    }
+      navigationOptions: {
+        drawerLabel: "Results"
+      }
+    },
+    Intro: {
+      screen: Intro,
+      navigationOptions: {
+        drawerLabel: "Guide",
+        drawerLockMode: "locked-open"
+      }
+    },
+    Splash: {
+      screen: Splash,
+      navigationOptions: {
+        drawerLabel: () => {},
+        drawerLockMode: "locked-open"
+      }
+    },
+    Details: {
+      screen: VideoFileds,
+      navigationOptions: {
+        drawerLabel: () => {},
+      }
+    },
+    Login: {
+      screen: Login,
+      navigationOptions: {
+        drawerLabel: () => {},
+        drawerLockMode: "locked-open"
+      }
+    },
   },
   {
-    initialRouteName: 'Intro',
+    initialRouteName: 'Splash',
   },
 );
 

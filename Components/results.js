@@ -1,8 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View,BackHandler } from 'react-native';
 import axios from 'axios'; // 0.18.0
+import { Container, Content, Textarea,Header, Form, Label,Right,Input, Card, CardItem, Body, Button, Icon, Text} from "native-base";
+
 
 export default class Videos extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+  }
+
   state = { fileds: [],isLoaded: false};
 
   getFileds() {
@@ -12,18 +19,41 @@ export default class Videos extends React.Component {
    componentDidMount() {
     this.getFileds()
   }
+
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+
+  componentWillUnmount() {
+      BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+
+  handleBackButtonClick() {
+      this.props.navigation.navigate("Home");
+      return true;
+  }
+
   render() {
     let {fileds} = this.state
 
     return (
-        <View style={styles.container}>
-        <Text style={styles.header}> תוצאות </Text>
-          {this.state.isLoaded &&
-          <View style={styles.fileds}>
-            {fileds.map((item,i) =>
-          <Text key ={i}>{item.filed} : {item.grade}</Text>)}
-          </View>}
-        </View>
+      <Container>
+        <Header>
+          <Body style={{left: 130}}>
+            <Text style={{color: "white", fontSize:20}}>Results</Text>
+          </Body>
+          <Icon name="menu" onPress={() => this.props.navigation.toggleDrawer()} style={{color:"white", top:15, right: 15}}/>
+        </Header>
+            <Content style={{top: 150}}>
+            <Card>
+                <CardItem>
+                <Body>
+                <Text style={{fontSize: 50, alignSelf: "center", justifyContent:"center"}}>No Results</Text>
+                </Body>
+                </CardItem>
+            </Card>
+            </Content>
+        </Container>
       );
   }
 }
