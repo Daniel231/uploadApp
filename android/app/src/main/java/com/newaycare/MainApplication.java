@@ -1,4 +1,4 @@
-package com.yea;
+package com.newaycare;
 
 import android.app.Application;
 

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yea">
+    package="com.newaycare">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
@@ -26,9 +26,9 @@
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
             <data
-                android:host="uploadapp.eu.auth0.com"
-                android:pathPrefix="/android/com.yea/callback"
-                android:scheme="com.yea" />
+                android:host="newaycare.eu.auth0.com"
+                android:pathPrefix="/android/com.newaycare/callback"
+                android:scheme="com.newaycare" />
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />

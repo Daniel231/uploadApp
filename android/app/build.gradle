@@ -98,7 +98,7 @@ android {
     buildToolsVersion "25.0.1"
 
     defaultConfig {
-        applicationId "com.yea"
+        applicationId "com.newaycare"
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1

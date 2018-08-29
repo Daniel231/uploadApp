@@ -21,6 +21,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_a9456eb05fd3346559fd46265001783763f27784.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -54,6 +63,15 @@
         revision="25.0.1"
         sha1="8f615bca00639150c9eb6175d4b5471193f70794">
         <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_e8b56e1a7aeff074f59efbbd409c7a9be680c289.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_e8acb7e0d182acc102c256ab44cf21034a6081ca.jar" />
     </item>
     <item
         is-multidex="false"
@@ -120,84 +138,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/customtabs/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e4a9d42c6d45eed4fd52f28dee859884131eae4c">
-        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/com.android.support-customtabs-23.0.1_83739e44409f7240d24bf50e7dd9d8e9f00bca29.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_af747a4bcd7331c25f67dead9d79209fe4fd97b8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_a336e06e22305ce17e89b886402bc5e967f7054b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.yqritc/android-scalablevideoview/1.0.4/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4394e0421a1e2c0cb691a783a393c192a84697ab">
-        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/com.yqritc-android-scalablevideoview-1.0.4_53934b5e754659172203819aa9ace8028ed7fa37.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/yea/react-native-auth0/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="5b8502c53a7668f4da060c4b95f1b5fe30caf9e9">
-        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/yea-react-native-auth0-unspecified_30e74e5d4997675965f8f01b45dd042929532827.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_7987d06ed07fb2be9637a0ca4cbbf64cccc9a924.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
-        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_a9456eb05fd3346559fd46265001783763f27784.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_e8acb7e0d182acc102c256ab44cf21034a6081ca.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/daniel/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
         <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_550bdeadff2b5bca853e4953fd3525e292fb7966.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.android.support/customtabs/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e4a9d42c6d45eed4fd52f28dee859884131eae4c">
+        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/com.android.support-customtabs-23.0.1_83739e44409f7240d24bf50e7dd9d8e9f00bca29.jar" />
     </item>
     <item
         is-multidex="false"
@@ -219,12 +174,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_af747a4bcd7331c25f67dead9d79209fe4fd97b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/yea/react-native-video/unspecified/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="67801b0fb2b3711323e4d88d07abf29b01cf97fb">
         <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/yea-react-native-video-unspecified_9f4c44143baf87d7bdc175be0f7381dd6ae587be.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/daniel/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_a336e06e22305ce17e89b886402bc5e967f7054b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/com.yqritc/android-scalablevideoview/1.0.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4394e0421a1e2c0cb691a783a393c192a84697ab">
+        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/com.yqritc-android-scalablevideoview-1.0.4_53934b5e754659172203819aa9ace8028ed7fa37.jar" />
     </item>
     <item
         is-multidex="false"
@@ -237,12 +219,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/daniel/yea/android/app/build/intermediates/exploded-aar/yea/react-native-auth0/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="5b8502c53a7668f4da060c4b95f1b5fe30caf9e9">
+        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/yea-react-native-auth0-unspecified_30e74e5d4997675965f8f01b45dd042929532827.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/daniel/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
         <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_bd5a44758c064eb823cbbc715bb1798e605a9d28.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/daniel/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="/home/daniel/yea/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_7987d06ed07fb2be9637a0ca4cbbf64cccc9a924.jar" />
     </item>
 
 </items>

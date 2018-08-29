@@ -33,6 +33,7 @@
     "react-native-navigation": "^1.1.477",
     "react-native-percentage-circle": "^1.0.7",
     "react-native-progress": "^3.5.0",
+    "react-native-rename": "^2.2.2",
     "react-native-snackbar-dialog": "^1.4.1",
     "react-native-thumbnail-video": "^0.1.0",
     "react-native-vector-icons": "^5.0.0",

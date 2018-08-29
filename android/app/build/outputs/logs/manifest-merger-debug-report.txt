@@ -2,7 +2,7 @@
 manifest
 ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:1:1-37:12
 	package
-		ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:2:5-22
+		ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:2:5-28
 		INJECTED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -48,7 +48,7 @@ MERGED from [org.webkit:android-jsc:r174650] /home/daniel/yea/android/app/build/
 		ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:13:7-38
 	android:name
 		ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:10:7-38
-activity#com.yea.MainActivity
+activity#com.newaycare.MainActivity
 ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:14:7-33:18
 	android:label
 		ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:16:9-41
@@ -85,13 +85,13 @@ ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:27:13-74
 	android:name
 		ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:27:23-71
 data
-ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:28:13-31:44
+ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:28:13-31:50
 	android:host
 		ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:29:17-54
 	android:scheme
-		ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:31:17-41
+		ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:31:17-47
 	android:pathPrefix
-		ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:30:17-63
+		ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:30:17-69
 activity#com.facebook.react.devsupport.DevSettingsActivity
 ADDED from /home/daniel/yea/android/app/src/main/AndroidManifest.xml:34:7-84
 	android:name

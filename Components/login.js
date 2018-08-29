@@ -12,16 +12,6 @@ export default class Login extends React.Component {
     name: null
   }
 
-  componentWillMount() {
-      AsyncStorage.getItem('userData', (err, userData) => {
-        if(userData){
-          console.log('initial Data',userData);
-          this.setState(JSON.parse(userData))
-          this.props.navigation.navigate("Intro");        
-        }
-      });
-  }
-
   handleLogin = () => {
     auth0
       .webAuth
@@ -38,7 +28,6 @@ export default class Login extends React.Component {
                 avatar: user.picture,
                 name: user.nickname
               }
-              console.log("user data after log:", userData)
   
               AsyncStorage.setItem('userData',JSON.stringify(userData),
                 () => {this.setState(userData)
