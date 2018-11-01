@@ -6,35 +6,38 @@ const styles = StyleSheet.create({
   image: {
     width: 320,
     height: 320,
-  }
+  },
+  text: {
+    textAlign: 'left',
+  },
 });
+
+const text =`The goal of this application is to record short movie of the child in order to analyze his symptoms. 
+
+
+Recording instructions: 
+
+1 In at least 60 seconds of the movie the recording should be in distance of 20 cm, the frame should contain the whole face and facial expressions and eyes movement should be seen clearly.
+2 Another at least one minute of the movie should be recording in distance of 1 meter when the baby lies on his/her back. the frame should contain the whole body.`
  
 const slides = [
   {
     key: 'somethun',
-    title: 'כותרת 1',
-    text: 'לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית הועניב.\nהיושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש ערששף.',
+    title: 'instructions',
+    text,
+    textStyle: styles.text,
     img: require('../assets/images/c1.png'),
     imgStyle: {
       height: 80 * 2.5,
       width: 109 * 2.5,
     },
-    backgroundColor: '#fa931d',
-    fontColor: '#fff',
+    backgroundColor: '#2e419f',
+    fontColor: '#0000',
     level: 10,
   },
 ];
  
 export default class Intro extends React.Component {
-  // componentWillMount() {
-  //   AsyncStorage.getItem('userIntro', (err, userIntro) => {
-  //     if(userIntro){
-  //       this.props.navigation.navigate("Home");        
-  //     } else {
-  //       AsyncStorage.setItem('userIntro', true);
-  //     }
-  //   });
-  // }    
   _onDone = () => {
     this.props.navigation.navigate("Home")
   }

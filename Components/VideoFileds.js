@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View , Modal, AsyncStorage, ImageBackground, Linking, BackHandler, Picker, TextInput} from 'react-native';
+import { StyleSheet, Text, View , Modal, AsyncStorage, ImageBackground, Linking, BackHandler, Picker, TextInput, Alert} from 'react-native';
 import axios from 'axios';
 import CryptoJS from 'crypto-js';
 import {url, api_key, api_secret} from '../cloudinaryDetails.js'
 import Pie from 'react-native-progress/Pie'
 import { Container, Content, Textarea,Header, Form, Label,Right,Input, Card, CardItem, Body, Button, Icon, Left} from "native-base";
-import SnackBar from 'react-native-snackbar-dialog'
+// import SnackBar from 'react-native-snackbar-dialog'
 
 
 export default class Videos extends React.Component {
@@ -67,11 +67,12 @@ export default class Videos extends React.Component {
         console.log('res', res)
         this.setState({percentCircule: false})
         this.props.navigation.navigate('Home');
-        SnackBar.show('Video successfuly uploaded!', {
-          backgroundColor: '#3f51b5',
-          textColor: 'white',
-          duration: 1000
-        })
+       
+        // SnackBar.show('Video successfuly uploaded!', {
+        //   backgroundColor: '#3f51b5',
+        //   textColor: 'white',
+        //   duration: 1000
+        // })
       })
       .catch((err) => {
         console.error('err', JSON.stringify(err));

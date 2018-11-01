@@ -9,10 +9,17 @@ export default class Login extends React.Component {
   state = {
     accessToken: null,
     avatar: null,
-    name: null
+    name: null,
+    showLoginButton: true
+  }
+
+  componentWillMount = () => {
+    this.handleLogout(); 
   }
 
   handleLogin = () => {
+    this.setState({showLoginButton: false})
+
     auth0
       .webAuth
       .authorize({scope: 'openid profile email', audience: 'https://uploadapp.eu.auth0.com/userinfo'})
@@ -32,7 +39,7 @@ export default class Login extends React.Component {
               AsyncStorage.setItem('userData',JSON.stringify(userData),
                 () => {this.setState(userData)
                 this.props.navigation.navigate("Intro")},
-                (error) => console.log(error)
+                (error) => console.err(error)
               );
             })
           })
@@ -71,25 +78,28 @@ export default class Login extends React.Component {
       logo: {
        margin:'auto',
        position: 'relative',
-       top: 70,
+       top: 20,
+       width:400,
+       height:400
     }
   });
 
-    const { accessToken } = this.state;    
+    const { accessToken, showLoginButton } = this.state;    
     return (
   <View style={styles.container}>
   
       <View style={styles.halfHeight} >
-        <Image  style={styles.logo} source={require('../assets/images/uploadAppLogo.png')} />
+        <Image  style={styles.logo} source={require('../assets/images/appIcon.jpeg')} />
   </View>
         
       <View style={styles.quarterHeight} >
-      <Button
+     {showLoginButton && <Button
                      title={accessToken ? 'Logout' : 'Login'}
                      onPress={accessToken ? this.handleLogout : this.handleLogin}
                      style={styles.loginButton}
                 />
-      {/* <Button
+     }
+                {/* <Button
                    title={'Next - for debugging only'}
                     onPress={() => {this.props.navigation.navigate("Intro")}}
                     style={styles.loginButton}

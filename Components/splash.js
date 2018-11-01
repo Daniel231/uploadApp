@@ -16,8 +16,10 @@ export default class Splash extends React.Component {
     }
   render() {
     return (
-        <View style={{ flex: 1 , alignItems: 'stretch'}}>
-            <Image source={require('../assets/images/splash.png')} style= {styles.icon}/>
+        <View style={{  flex: 5,
+            backgroundColor: 'white',
+            alignItems: 'center',  backgroundColor: 'white'}}>
+            <Image source={require('../assets/images/appIcon.jpeg')} style= {styles.icon}/>
         </View>
     );
   }
@@ -25,8 +27,12 @@ export default class Splash extends React.Component {
 
 const styles = StyleSheet.create({
     icon: {
-        width: Dimensions.get('window').width ,
-        height: Dimensions.get('window').height,
-        resizeMode: "contain"
+        position: 'relative',
+        top: 20,
+        width:400,
+        height:400
+        // width: Dimensions.get('window').width ,
+        // height: Dimensions.get('window').height,
+        // resizeMode: "contain"
     }
 });

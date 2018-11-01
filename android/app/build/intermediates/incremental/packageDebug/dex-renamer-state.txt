@@ -1,4 +1,4 @@
-#Wed Aug 29 18:36:02 IDT 2018
-base.0=/home/daniel/yea/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+#Thu Nov 01 00:05:41 IST 2018
+base.0=C\:\\Users\\Moshe Davidesko\\Documents\\Workspace\\uploadApp\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=/home/daniel/yea/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+file.0=C\:\\Users\\Moshe Davidesko\\Documents\\Workspace\\uploadApp\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

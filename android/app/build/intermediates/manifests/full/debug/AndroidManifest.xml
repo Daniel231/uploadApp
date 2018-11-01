@@ -39,7 +39,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="newaycare.eu.auth0.com"
+                    android:host="uploadapp.eu.auth0.com"
                     android:pathPrefix="/android/com.newaycare/callback"
                     android:scheme="com.newaycare" />
             </intent-filter>

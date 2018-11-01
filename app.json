@@ -1,4 +1,7 @@
 {
   "name": "neWay-Care",
-  "displayName": "neWay-Care"
+  "displayName": "neWay-Care",
+  "android": { 
+    "versionCode": 2 
+  }
 }

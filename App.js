@@ -28,6 +28,12 @@ const RootStack = DrawerNavigator({
         drawerLockMode: "locked-open"
       }
     },
+    Logout: {
+      screen: Login,
+      navigationOptions: {
+        drawerLabel: "Logout"
+      }
+    },
     Splash: {
       screen: Splash,
       navigationOptions: {
