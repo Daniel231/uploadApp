@@ -12,7 +12,7 @@ export default class Splash extends React.Component {
                     this.props.navigation.navigate("Login")
                 }
               });
-        }, 2000);
+        }, 500);
     }
   render() {
     return (

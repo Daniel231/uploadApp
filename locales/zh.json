@@ -1,0 +1,22 @@
+{
+    "login": {
+      "login_button": "登录",
+      "logout_button": "登出"
+    },
+    "intro": {
+      "title": "Instructions" ,
+      "text" : "``"
+    },
+    "results":{},
+    "sideBar":{},
+    "videoCard":{},
+    "videoFileds":{},
+    "videos":{
+      "uploadTitle": "请上传4个视频"
+    },
+    "settings":{
+      "title":"设置",
+      "selectLanguage": "选择语言",
+      "saveBtn":"保存"
+    }
+  }

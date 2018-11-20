@@ -1,0 +1,28 @@
+{
+    "login": {
+      "login_button": "Login",
+      "logout_button": "Logout"
+    },
+    "intro": {
+      "title": "Instructions" ,
+      "text" : "bla"
+    },
+    "addVideo": {
+      "title":"Choose video",
+      "takePhotoButtonTitle": "Capture from camera",
+      "chooseFromLibraryButtonTitle":"Choose from gallery",
+      "cancelButtonTitle":"cancel"
+    },
+    "results":{},
+    "sideBar":{},
+    "videoCard":{},
+    "videoFileds":{},
+    "videos":{
+      "uploadTitle":"Please upload 4 videos"
+    },
+    "settings":{
+      "title":"settings",
+      "selectLanguage": "Select language",
+      "saveBtn":"save"
+    }
+  }

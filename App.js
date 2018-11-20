@@ -6,6 +6,8 @@ import Splash from './Components/splash';
 import VideoFileds from './Components/VideoFileds';
 import Login from './Components/login';
 import Results from './Components/results';
+import Settings from './Components/settings';
+
 import { DrawerNavigator } from 'react-navigation';
 
 const RootStack = DrawerNavigator({
@@ -25,6 +27,13 @@ const RootStack = DrawerNavigator({
       screen: Intro,
       navigationOptions: {
         drawerLabel: "Guide",
+        drawerLockMode: "locked-open"
+      }
+    },
+    Intro: {
+      screen: Settings,
+      navigationOptions: {
+        drawerLabel: "Settings",
         drawerLockMode: "locked-open"
       }
     },

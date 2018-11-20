@@ -6,6 +6,7 @@ import base64 from 'react-native-base64'
 import VideoCard from "./VideoCard"
 import AddVideo from "./AddVideo"
 import { Container, Header, Button, Icon, Right, Left, Spinner, Body, Content, Text} from 'native-base';
+import { strings } from '../locales/i18n';
 
 export default class Videos extends React.Component {
 
@@ -74,7 +75,7 @@ export default class Videos extends React.Component {
         </Header>
         {this.state.isLoading ?
         <Content>
-          <Text style={{justifyContent:"center", alignSelf:"center"}}>Please upload 4 videos</Text>
+          <Text style={{justifyContent:"center", alignSelf:"center"}}>{strings('videos.uploadTitle')}</Text>
           <ScrollView>
             {videos.length == 0 ?
               <AddVideo addVideo={(item) => this.addVideo(item)}/>

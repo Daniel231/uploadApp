@@ -2,6 +2,7 @@ import React from 'react';
 import {AsyncStorage, StatusBar, Platform, Text, View, Button, StyleSheet, Image } from 'react-native';
 import Auth0 from 'react-native-auth0';
 import axios from 'axios';
+import { strings } from '../locales/i18n';
 
 const auth0 = new Auth0({ domain: 'uploadapp.eu.auth0.com', clientId: 'EdO35gxmDl3r3YcvE7x4WkrKEhN6s4Xd' });
 
@@ -94,7 +95,7 @@ export default class Login extends React.Component {
         
       <View style={styles.quarterHeight} >
      {showLoginButton && <Button
-                     title={accessToken ? 'Logout' : 'Login'}
+                     title={accessToken ? strings('login.logout_button') : strings('login.login_button')}
                      onPress={accessToken ? this.handleLogout : this.handleLogin}
                      style={styles.loginButton}
                 />
