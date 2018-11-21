@@ -1,11 +1,19 @@
 {
+    "labels" :{
+      "videos":"Videos",
+      "results":"Results",
+      "intro": "Guide",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
     "login": {
       "login_button": "Login",
       "logout_button": "Logout"
     },
     "intro": {
       "title": "Instructions" ,
-      "text" : "bla"
+      "text" : "The goal of this application is to record short movie of the child in order to analyze his symptoms. \nRecording instructions: \n1 In at least 60 seconds of the movie the recording should be in distance of 20 cm, the frame should contain the whole face and facial expressions and eyes movement should be seen clearly.\n2 Another at least one minute of the movie should be recording in distance of 1 meter when the baby lies on his/her back. the frame should contain the whole body"
+      ,"finishBtn": "Finish"
     },
     "addVideo": {
       "title":"Choose video",
@@ -13,12 +21,24 @@
       "chooseFromLibraryButtonTitle":"Choose from gallery",
       "cancelButtonTitle":"cancel"
     },
-    "results":{},
+    "results":{
+      "emptyMsg": "No results"
+    },
     "sideBar":{},
-    "videoCard":{},
-    "videoFileds":{},
+    "videoCard":{
+      "videoName": "Video name",
+      "videoDetails":"Video details",
+      "videoInServer": "Viseo is in server",
+      "uploadToServer" : "Upload to server"
+    },
+    "videoFileds":{
+      "videoInformation": "Video information",
+      "childrenAge": "Children age",
+      "notes": "Notes"
+    },
     "videos":{
-      "uploadTitle":"Please upload 4 videos"
+      "uploadTitle":"Please upload 4 videos",
+      "loadingMsg": "Loading videos from server.."
     },
     "settings":{
       "title":"settings",

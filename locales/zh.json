@@ -1,18 +1,44 @@
 {
+    "labels" :{
+      "videos":"影片",
+      "results":"结果",
+      "intro": "指南",
+      "settings": "设置",
+      "logout":"登出"
+    },  
     "login": {
       "login_button": "登录",
       "logout_button": "登出"
     },
     "intro": {
-      "title": "Instructions" ,
-      "text" : "``"
+      "title": "说明" ,
+      "text" : "本APP应用程序的目的是用视频方式录制婴儿的特殊行为以分析他的潜在问题。\n\n录制视频时的注意事项：\n视频1：当婴儿坐在床上（面部面向镜头），在20厘米的距离录制，视频录制时长60至120秒，视频框架应包含婴儿的整个面部表情，眼睛活动应清晰可见\n视频2：按视频1的方法，重新录制另一视频, 时长60至120秒\n视频3：当婴儿躺在床上（面部向上，背向下），在1米的距离录制，视频录制时长60至120秒，视频框架应包含婴儿的整个身体\n视频4：按视频3的方法，重新录制另一视频, 时长60至120秒"
+      ,"finishBtn": "完"
     },
-    "results":{},
+    "results":{
+      "emptyMsg":"没有结果"
+    },
+    "addVideo": {
+      "title":"选择视频",
+      "takePhotoButtonTitle": "从相机捕获",
+      "chooseFromLibraryButtonTitle":"从画廊中选择",
+      "cancelButtonTitle":"取消"
+    },
     "sideBar":{},
-    "videoCard":{},
-    "videoFileds":{},
+    "videoCard":{
+      "videoName": "视频名称",
+      "videoDetails":"视频详情",
+      "videoInServer": "视频在服务器中",
+      "uploadToServer" : "上传到服务器"
+    },
+    "videoFileds":{
+      "videoInformation": "视频信息",
+      "childrenAge": "儿童年龄",
+      "notes": "笔记"
+    },
     "videos":{
-      "uploadTitle": "请上传4个视频"
+      "uploadTitle": "请上传4个视频",
+      "loadingMsg": "从服务器加载视频.."
     },
     "settings":{
       "title":"设置",

@@ -2,6 +2,8 @@
 import ReactNative from 'react-native';
 import {AsyncStorage} from 'react-native';
 import I18n from 'react-native-i18n';
+import app from '../App';
+
 
 // Import all locales
 import en from './en.json';
@@ -15,15 +17,13 @@ I18n.translations = {
   en,
   zh
 };
-AsyncStorage.getItem('settings', (err, settings) => {
-  if(settings){
-    I18n.locale = JSON.parse(settings).language;
-  }
-});
 
 export const switchLanguage = (lang, component) => {
+  // console.warn(app)
+  // console.warn(component)
+
   I18n.locale = lang;
-   AsyncStorage.setItem('settings',JSON.stringify({language: lang}));
+  AsyncStorage.setItem('settings',JSON.stringify({language: lang}));
   component.forceUpdate();
 };
 

@@ -95,10 +95,10 @@ export default class Login extends React.Component {
         
       <View style={styles.quarterHeight} >
      {showLoginButton && <Button
-                     title={accessToken ? strings('login.logout_button') : strings('login.login_button')}
-                     onPress={accessToken ? this.handleLogout : this.handleLogin}
-                     style={styles.loginButton}
-                />
+          title={accessToken ? strings('login.logout_button') : strings('login.login_button')}
+          onPress={accessToken ? this.handleLogout : this.handleLogin}
+          style={styles.loginButton}
+    />
      }
                 {/* <Button
                    title={'Next - for debugging only'}

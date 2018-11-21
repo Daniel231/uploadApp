@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View,BackHandler } from 'react-native';
 import axios from 'axios'; // 0.18.0
 import { Container, Content, Textarea,Header, Form, Label,Right,Input, Card, CardItem, Body, Button, Icon, Text} from "native-base";
-
+import { strings } from '../locales/i18n';
 
 export default class Videos extends React.Component {
   constructor(props) {
@@ -39,8 +39,8 @@ export default class Videos extends React.Component {
     return (
       <Container>
         <Header>
-          <Body style={{left: 130}}>
-            <Text style={{color: "white", fontSize:20}}>Results</Text>
+        <Body style={{alignItems: "center"}}>
+            <Text style={{color: "white", fontSize:20}}>{strings('labels.results')}</Text>
           </Body>
           <Icon name="menu" onPress={() => this.props.navigation.toggleDrawer()} style={{color:"white", top:15, right: 15}}/>
         </Header>
@@ -48,7 +48,7 @@ export default class Videos extends React.Component {
             <Card>
                 <CardItem>
                 <Body>
-                <Text style={{fontSize: 50, alignSelf: "center", justifyContent:"center"}}>No Results</Text>
+                <Text style={{fontSize: 50, alignSelf: "center", justifyContent:"center"}}>{strings('results.emptyMsg')}</Text>
                 </Body>
                 </CardItem>
             </Card>

@@ -1,14 +1,15 @@
 import React from 'react';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right ,} from 'native-base';
 import ImagePicker from 'react-native-image-picker'
+import { strings } from '../locales/i18n';
 
 export default class AddVideo extends React.Component {
     selectVideoTapped() {
         const options = {
-          title: 'Choose video',
-          takePhotoButtonTitle: 'Capture from camera',
-          chooseFromLibraryButtonTitle:'Choose from gallery',
-          cancelButtonTitle:'Cancel',
+          title: strings("addVideo.title"),
+          takePhotoButtonTitle: strings("addVideo.takePhotoButtonTitle"),
+          chooseFromLibraryButtonTitle:  strings("addVideo.chooseFromLibraryButtonTitle"),
+          cancelButtonTitle: strings("addVideo.cancelButtonTitle"),
           mediaType: 'video',
           videoQuality: 'medium'
         };

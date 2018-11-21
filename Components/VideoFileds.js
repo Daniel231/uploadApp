@@ -6,7 +6,7 @@ import {url, api_key, api_secret} from '../cloudinaryDetails.js'
 import Pie from 'react-native-progress/Pie'
 import { Container, Content, Textarea,Header, Form, Label,Right,Input, Card, CardItem, Body, Button, Icon, Left} from "native-base";
 // import SnackBar from 'react-native-snackbar-dialog'
-
+import { strings } from '../locales/i18n';
 
 export default class Videos extends React.Component {
 
@@ -102,7 +102,7 @@ export default class Videos extends React.Component {
       <Container>
         <Header>
           <Body style={{left: 70}}>
-            <Text style={{color: "white", fontSize:20}}>Video information</Text>
+            <Text style={{color: "white", fontSize:20}}>{strings("videoFileds.videoInformation")}</Text>
           </Body>
           <Icon name="md-arrow-round-back" onPress={() => this.props.navigation.navigate("Home")} style={{color:"white", top:15, right: 15}}/>
         </Header>
@@ -119,7 +119,7 @@ export default class Videos extends React.Component {
                   :
                     null
                   }
-                  <Label>Children age</Label>
+                  <Label>{strings("videoFileds.childrenAge")}Children age</Label>
                   {this.state.video.url ?
                   <Text>{videoData.age} {videoData.ageKind}</Text>
                   :
@@ -135,7 +135,7 @@ export default class Videos extends React.Component {
                     </Picker>
                   </View>
                   }
-                  <Label>Notes</Label>
+                  <Label>{strings("videoFileds.notes")}</Label>
                   {this.state.video.url ?
                   <Textarea editable={false} rowSpan={5} bordered value={videoData.videoInfo}/>
                   :

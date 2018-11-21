@@ -68,8 +68,8 @@ export default class Videos extends React.Component {
     return (
       <Container>
         <Header>
-          <Body style={{left: 130}}>
-            <Text style={{color: "white", fontSize:20}}>Videos</Text>
+          <Body style={{alignItems: "center"}}>
+            <Text style={{color: "white", fontSize:20}}>{strings('labels.videos')}</Text>
           </Body>
           <Icon name="menu" onPress={() => this.props.navigation.toggleDrawer()} style={{color:"white", top:15, right: 15}}/>
         </Header>
@@ -90,7 +90,7 @@ export default class Videos extends React.Component {
         :
         <Body style={{alignContent:"center", justifyContent:"center"}}>
             <Spinner color='blue'/>
-            <Text>Loading videos from server..</Text>
+            <Text>{strings('videos.loadingMsg')}</Text>
           </Body>}
       </Container>
     );
